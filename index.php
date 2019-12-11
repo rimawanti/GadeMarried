@@ -1,4 +1,5 @@
 <?php
+{{ $error }}
 <html>
 	<body>
 		<h1>Tessss 123456</h1>

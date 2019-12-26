@@ -49,6 +49,42 @@
                   <p>Nikah Sekarang</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pendidikan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rumah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kendaraan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Travelling</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ibadah</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Others</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">

@@ -46,12 +46,6 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputBPHTB" class="col-sm-2 col-form-label">Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)</label>
-                    <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputBPHTB" placeholder="Enter Bea Perolehan Hak atas Tanah dan Bangunan">
-                    </div>
-                  </div>
-                  <div class="form-group row row">
                     <label for="InputBiayaAJB" class="col-sm-2 col-form-label">Biaya Akta Jual Beli </label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="InputBiayaAJB" placeholder="Enter Biaya Akta Jual Beli">
@@ -61,6 +55,12 @@
                     <label for="InputBBN" class="col-sm-2 col-form-label">Biaya Balik Nama</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="InputBBN" placeholder="Enter Biaya Balik Nama">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputBPHTB" class="col-sm-2 col-form-label">Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputBPHTB" placeholder="Enter Bea Perolehan Hak atas Tanah dan Bangunan">
                     </div>
                   </div>
                   <div class="form-group row row">

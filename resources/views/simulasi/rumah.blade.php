@@ -70,7 +70,7 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana xxxxxxxxxxxx (dalam tahun)</label>
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana Pembelian Rumah (dalam tahun)</label>
                     <div class="col-sm-10">
                    	<input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
                 	</div>

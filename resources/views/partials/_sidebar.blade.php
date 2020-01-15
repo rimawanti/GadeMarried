@@ -50,41 +50,41 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                <a href="{{url('/simulasi/pendidikan')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pendidikan'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pendidikan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                <a href="{{url('/simulasi/rumah')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'rumah'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rumah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                <a href="{{url('/simulasi/kendaraan')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'kendaraan'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kendaraan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                <a href="{{url('/simulasi/travel')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'travel'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Travelling</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
+                <a href="{{url('/simulasi/haji_umroh')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'haji_umroh'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ibadah</p>
+                  <p>Haji/Umroh</p>
                 </a>
               </li>
-               <li class="nav-item">
+              <!--  <li class="nav-item">
                 <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Others</p>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </li>
           <li class="nav-item">

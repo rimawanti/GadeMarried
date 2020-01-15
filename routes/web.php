@@ -48,6 +48,23 @@ Route::get('/simulasi/tabungan', function () {
 Route::get('/simulasi/pinjam', function () {
     return view('simulasi.index_pinjaman');
 });
+Route::get('/simulasi/travel', function () {
+    return view('simulasi.travel');
+});
+Route::get('/simulasi/haji_umroh', function () {
+    return view('simulasi.haji');
+});
+Route::get('/simulasi/pendidikan', function () {
+    return view('simulasi.pendidikan');
+});
+Route::get('/simulasi/rumah', function () {
+    return view('simulasi.rumah');
+});
+Route::get('/simulasi/kendaraan', function () {
+    return view('simulasi.kendaraan');
+});
+
+//ajax function
 Route::post('simulasi/hitung', 'SimulasiController@hitung');
 
 Route::post('simulasi/hitungPinjaman', 'SimulasiController@hitungPinjaman');

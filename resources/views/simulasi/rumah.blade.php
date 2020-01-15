@@ -34,6 +34,12 @@
                	{!! csrf_field() !!}
                	 <div class="card-body">
                   <div class="form-group row row">
+                    <label for="InputHargaRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputBiayaSertifikat" class="col-sm-2 col-form-label">Biaya Cek Sertifikat </label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputBiayaSertifikat" placeholder="Enter Biaya Cek Sertifikat">

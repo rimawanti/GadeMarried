@@ -48,7 +48,7 @@
                   <div class="form-group row row">
                     <label for="InputBPHTB" class="col-sm-2 col-form-label">Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputBPHTB" placeholder="Enter Biaya Cek Sertifikat">
+                    	<input type="text" class="form-control" id="InputBPHTB" placeholder="Enter Bea Perolehan Hak atas Tanah dan Bangunan">
                     </div>
                   </div>
                   <div class="form-group row row">

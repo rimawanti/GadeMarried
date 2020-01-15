@@ -70,6 +70,12 @@
                     </div>
                   </div>
                   <div class="form-group row row">
+                    <label for="InputPPnBM" class="col-sm-2 col-form-label">Pajak Pembelian Barang Mewah</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pajak Pembelian Barang Mewah">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana Pembelian Rumah (dalam tahun)</label>
                     <div class="col-sm-10">
                    	<input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>

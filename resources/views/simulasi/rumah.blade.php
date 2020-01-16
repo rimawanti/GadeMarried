@@ -40,27 +40,27 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputBiayaSertifikat" class="col-sm-2 col-form-label">Biaya Cek Sertifikat </label>
+                    <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputBiayaSertifikat" placeholder="Enter Biaya Cek Sertifikat">
+                    	<input type="text" class="form-control" id="InputNJOP" placeholder="Enter Harga Sesuai NJOP">
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputBiayaAJB" class="col-sm-2 col-form-label">Biaya Akta Jual Beli </label>
+                    <label for="InputNJOPTKP" class="col-sm-2 col-form-label">NJOPTKP/NPTKP</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="InputBiayaAJB" placeholder="Enter Biaya Akta Jual Beli">
-                    </div>
-                  </div>
-                  <div class="form-group row row">
-                    <label for="InputBBN" class="col-sm-2 col-form-label">Biaya Balik Nama</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="InputBBN" placeholder="Enter Biaya Balik Nama">
+                      <input type="text" class="form-control" id="InputNJOPTKP" placeholder="Enter NJOPTKP/NPTKP">
                     </div>
                   </div>
                   <div class="form-group row row">
                     <label for="InputBPHTB" class="col-sm-2 col-form-label">Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputBPHTB" placeholder="Enter Bea Perolehan Hak atas Tanah dan Bangunan">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputPajakPenjual" class="col-sm-2 col-form-label">Pajak Penjual (PPh Final)</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputPajakPenjual" placeholder="Enter Pajak Penjual (PPh Final)">
                     </div>
                   </div>
                   <div class="form-group row row">
@@ -72,11 +72,23 @@
                   <div class="form-group row row">
                     <label for="InputPPnBM" class="col-sm-2 col-form-label">Pajak Pembelian Barang Mewah</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pajak Pembelian Barang Mewah">
+                    	<input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pembelian Barang Mewah">
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana Pembelian Rumah (dalam tahun)</label>
+                    <label for="InputAsuransi" class="col-sm-2 col-form-label">Asuransi Kebakaran</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputAsuransi" placeholder="Enter Asuransi Kebakaran">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputBiayaNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputBiayaNotaris" placeholder="Enter Biaya Notaris/PPAT">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
                     <div class="col-sm-10">
                    	<input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
                 	</div>

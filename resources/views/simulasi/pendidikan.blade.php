@@ -51,6 +51,7 @@
                     <input type="text" step="0.01" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
                 	</div>
                   </div>
+                  
                   <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="Check1">
                     <label class="form-check-label" for="Check1">Check me out</label>

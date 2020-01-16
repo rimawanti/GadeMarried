@@ -54,7 +54,7 @@
                   <div class="form-group row">
                     <label for="InputPAUD" class="col-sm-2 col-form-label">Biaya Sekolah PAUD saat ini:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputPAUD" name="InputPAUD" placeholder="Enter biaya PAUD" value=8500000>
+                    <input type="text" step="0.01" class="form-control" id="InputPAUD" name="InputPAUD" placeholder="Enter biaya PAUD" value=10000000>
                 	</div>
                   </div>
                   <div class="form-group row">

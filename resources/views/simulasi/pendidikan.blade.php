@@ -52,17 +52,41 @@
                 	</div>
                   </div>
                   <div class="form-group row">
-                    <label for="InputGaji" class="col-sm-2 col-form-label">Biaya Sekolah TK saat ini:</label>
+                    <label for="InputTK" class="col-sm-2 col-form-label">Biaya Sekolah TK saat ini:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
+                    <input type="text" step="0.01" class="form-control" id="InputTK" name="InputTK" placeholder="Enter biaya TK" value=2000000>
                 	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputSD" class="col-sm-2 col-form-label">Biaya Sekolah SD saat ini:</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="InputSD" name="InputSD" placeholder="Enter biaya SD" value=2000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputSMP" class="col-sm-2 col-form-label">Biaya Sekolah SMP saat ini:</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="InputSMP" name="InputSMP" placeholder="Enter biaya SMP" value=2000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputSMA" class="col-sm-2 col-form-label">Biaya Sekolah SMA saat ini:</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="InputSMA" name="InputSMA" placeholder="Enter biaya SMA" value=2000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputUniv" class="col-sm-2 col-form-label">Biaya Universitas saat ini:</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="InputUniv" name="InputUniv" placeholder="Enter biaya Universitas" value=2000000>
+                	</div>
+                  </div>
                   <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="Check1">
                     <label class="form-check-label" for="Check1">Check me out</label>
                   </div> -->
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">HITUNG</button> -->
                 </div>

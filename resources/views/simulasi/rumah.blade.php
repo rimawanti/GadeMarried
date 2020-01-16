@@ -52,24 +52,6 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputBPHTB" class="col-sm-2 col-form-label">Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)</label>
-                    <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputBPHTB" placeholder="Enter Bea Perolehan Hak atas Tanah dan Bangunan">
-                    </div>
-                  </div>
-                  <div class="form-group row row">
-                    <label for="InputPajakPenjual" class="col-sm-2 col-form-label">Pajak Penjual (PPh Final)</label>
-                    <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputPajakPenjual" placeholder="Enter Pajak Penjual (PPh Final)">
-                    </div>
-                  </div>
-                  <div class="form-group row row">
-                    <label for="InputPPN" class="col-sm-2 col-form-label">Pajak Pertambahan Nilai</label>
-                    <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputPPN" placeholder="Enter Pajak Pertambahan Nilai">
-                    </div>
-                  </div>
-                  <div class="form-group row row">
                     <label for="InputPPnBM" class="col-sm-2 col-form-label">Pajak Pembelian Barang Mewah</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pembelian Barang Mewah">

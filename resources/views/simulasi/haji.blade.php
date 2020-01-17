@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>RUMAH</b></h1>
+                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>HAJI</b></h1>
                   <!-- <a href="javascript:void(0);">Selengkapnya</a> -->
                 </div>
               </div>
@@ -40,10 +40,17 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana xxxxxxxxxxxx (dalam tahun)</label>
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana ibadah haji (dalam tahun)</label>
                     <div class="col-sm-10">
-                   	<input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
-                	</div>
+                   	  <input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
+                	 </div>
+                  </div>
+                   <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Pilihan program haji</label>
+                    <div class="col-sm-10">
+                      {{ Form::radio('status','0',true,array('id' => 'status','class'=>'')) }} Regular
+                      {{ Form::radio('status','1',false,array('id' => 'status','class'=>'')) }} ONH Plus
+                   </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>

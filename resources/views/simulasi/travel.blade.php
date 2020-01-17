@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h1 class="card-title">LAKUKAN SIMULASI TRAVEL <b>RUMAH</b></h1>
+                  <h1 class="card-title"> SIMULASI PERJALANAN KE TEMPAT YANG ANDA MIMPIKAN <b>TRAVEL</b></h1>
                   <!-- <a href="javascript:void(0);">Selengkapnya</a> -->
                 </div>
               </div>
@@ -34,13 +34,13 @@
                	{!! csrf_field() !!}
                	 <div class="card-body">
                   <div class="form-group row row">
-                    <label for="InputName" class="col-sm-2 col-form-label">Nama </label>
+                    <label for="InputName" class="col-sm-2 col-form-label">Masukkan nama anda : </label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputName" placeholder="Enter Nama Pasangan">
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana xxxxxxxxxxxx (dalam tahun)</label>
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Destinasi Perjalanan : </label>
                     <div class="col-sm-10">
                    	<input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
                 	</div>

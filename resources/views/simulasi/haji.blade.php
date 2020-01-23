@@ -42,14 +42,38 @@
                   <div class="form-group row row">
                     <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana ibadah haji (dalam tahun)</label>
                     <div class="col-sm-10">
-                   	  <input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
+                   	  <input type="number" class="form-control" id="InputJangka" name="InputJangka" >
                 	 </div>
                   </div>
-                   <div class="form-group row row">
+                  <div class="form-group row row">
                     <label for="InputJangka" class="col-sm-2 col-form-label" >Pilihan program haji</label>
                     <div class="col-sm-10">
                       {{ Form::radio('status','0',true,array('id' => 'status','class'=>'')) }} Regular
                       {{ Form::radio('status','1',false,array('id' => 'status','class'=>'')) }} ONH Plus
+                   </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Uang saku</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="InputSaku" name="InputSaku" >
+                   </div>
+                  </div>
+                   <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Vaksin meningitis</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="InputVaksin" name="InputVaksin" >
+                   </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Dana Darurat</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="InputDarurat" name="InputDarurat" >
+                   </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Oleh-oleh</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="InputOleh" name="InputOleh" >
                    </div>
                   </div>
                   <div class="form-group row">

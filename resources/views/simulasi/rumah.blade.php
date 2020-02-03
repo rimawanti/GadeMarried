@@ -43,6 +43,20 @@
                     </div>
                   </div>
                   <div class="form-group row row">
+                    <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
+                    <div class="col-sm-10">
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>--Pilih Kota/Kabupaten--</option>
+                        <option value="Jakarta Utara">Jakarta Utara</option>
+                        <option value="Jakarta Timur">Jakarta Timur</option>
+                        <option value="Jakarta Selatan">Jakarta Selatan</option>
+                        <option value="Jakarta Barat">Jakarta Barat</option>
+                        <option value="Jakarta Pusat">Jakarta Pusat</option>
+                        <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputHargaRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">

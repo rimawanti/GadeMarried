@@ -57,6 +57,18 @@
                     </div>
                   </div>
                   <div class="form-group row row">
+                    <label for="InputLuasTanah" class="col-sm-2 col-form-label">Luas Tanah (meter persegi)</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputLuasTanah" placeholder="Enter Luas Tanah">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputLuasBangunan" class="col-sm-2 col-form-label">Luas Bangunan (meter persegi)</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputLuasBangunan" placeholder="Enter Luas Bangunan">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputHargaRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">

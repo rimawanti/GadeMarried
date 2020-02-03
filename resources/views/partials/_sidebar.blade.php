@@ -76,7 +76,7 @@
               <li class="nav-item">
                 <a href="{{url('/simulasi/haji_umroh')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'haji_umroh'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Haji/Umroh</p>
+                  <p>Haji</p>
                 </a>
               </li>
               <!--  <li class="nav-item">

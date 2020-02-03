@@ -34,6 +34,20 @@
                	{!! csrf_field() !!}
                	 <div class="card-body">
                   <div class="form-group row row">
+                    <label for="PilihProvinsi" class="col-sm-2 col-form-label">Provinsi</label>
+                    <div class="col-sm-10">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputHargaRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">

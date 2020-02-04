@@ -34,6 +34,41 @@
                	{!! csrf_field() !!}
                	 <div class="card-body">
                   <div class="form-group row row">
+                    <label for="PilihProvinsi" class="col-sm-2 col-form-label">Provinsi</label>
+                    <div class="col-sm-10">
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>--Pilih Provinsi--</option>
+                        <option value="DKI Jakarta">DKI Jakarta</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
+                    <div class="col-sm-10">
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>--Pilih Kota/Kabupaten--</option>
+                        <option value="Jakarta Utara">Jakarta Utara</option>
+                        <option value="Jakarta Timur">Jakarta Timur</option>
+                        <option value="Jakarta Selatan">Jakarta Selatan</option>
+                        <option value="Jakarta Barat">Jakarta Barat</option>
+                        <option value="Jakarta Pusat">Jakarta Pusat</option>
+                        <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputLuasTanah" class="col-sm-2 col-form-label">Luas Tanah (meter persegi)</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputLuasTanah" placeholder="Enter Luas Tanah">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputLuasBangunan" class="col-sm-2 col-form-label">Luas Bangunan (meter persegi)</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" id="InputLuasBangunan" placeholder="Enter Luas Bangunan">
+                    </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputHargaRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">

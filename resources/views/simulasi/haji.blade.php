@@ -11,7 +11,10 @@
     </style>
 </head>
 <title> Simulasi </title>
+<script>
 
+
+</script>
 @extends('partials.layout') @section('content')
 <div class="row">
     <div class="col-lg-10">
@@ -31,20 +34,20 @@
                 <div class="position-relative mb-4"></div>
                 <div class="container">
                     <!--- SILAHKAN EDIT DISINI -->
-                    {!! Form::open(array('route' => '','class' => 'form-horizontal','files' => true)) !!}
+                    {!! Form::open(array('class' => 'form-horizontal','files' => true)) !!}
                     <!-- <form action="#" method="post" class="form-horizontal" --> 
                     {!! csrf_field() !!}
                     <div class="card-body">
                         <div class="form-group row row">
                             <label for="InputName" class="col-sm-2 col-form-label">Nama </label>
                             <div class="col-sm-10">
-                                {{  Form::text('InputName',null,array('class' => 'form-control','placeholder'=>'Masukkan nama'> }}
+                                {{  Form::text('InputName',null,array('class' => 'form-control','placeholder'=>'Masukkan nama')) }}
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Rencana ibadah haji (dalam tahun)</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="InputJangka" name="InputJangka">
+                                <input type="text" class="form-control" id="InputJangka" name="InputJangka">
                             </div>
                         </div>
                         <div class="form-group row row">
@@ -56,31 +59,31 @@
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Uang saku</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="InputSaku" name="InputSaku">
+                                <input type="text" class="form-control" id="Inputan" name="InputSaku" >
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Vaksin meningitis</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="InputVaksin" name="InputVaksin">
+                                <input type="text" class="form-control" id="Inputan" name="InputVaksin">
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Dana Darurat</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="InputDarurat" name="InputDarurat">
+                                <input type="text" class="form-control" id="Inputan" name="InputOleh">
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Oleh-oleh</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="InputOleh" name="InputOleh">
+                                <input type="text" class="form-control" id="Inputan" name="InputOleh">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
                             <div class="col-sm-10">
-                                <input type="text" step="0.01" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
+                                <input type="text" step="0.01" class="form-control" id="Inputan" name="InputGaji" placeholder="Enter gaji" value=2000000>
                             </div>
                         </div>
                         <!-- <div class="form-check">
@@ -142,5 +145,8 @@
     </div>
 </div>
 @endsection
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+
+</script>
 
 </html>

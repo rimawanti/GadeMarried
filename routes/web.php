@@ -69,6 +69,8 @@ Route::post('simulasi/hitung', 'SimulasiController@hitung');
 
 Route::post('simulasi/hitungPinjaman', 'SimulasiController@hitungPinjaman');
 
+Route::post('simulasi/hitungPendidikan', 'SimulasiController@hitungPendidikan');
+
 
 /* ROUTING PRODUK */
 Route::get('/produk', function () {

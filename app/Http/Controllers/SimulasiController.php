@@ -106,6 +106,58 @@ class SimulasiController extends Controller
         
         //echo 'suksessPinjaman';
     }
+     public function hitungPendidikan(Request $request)
+    {
+        $start = microtime(true);
+        $starts = array(4,6,12,15,18); //start usia tk,sd,smp,sma,kuliah
+        $s = 0.15; /*suku bunga -> inflasi*/ $rekom=1; 
+        $totalbiaya =0; $cicilan=0;  $ftotal =0;// f stand for future value
+        $j = array();  //j stand for jarak usia
+        $Biaya = array(); 
+
+        $Biaya[0] = $request->input('InputBiayaTK');
+        $Biaya[1] = $request->input('InputBiayaSD');
+        $Biaya[2] = $request->input('InputBiayaSMP');
+        $Biaya[3] = $request->input('InputBiayaSMA');
+        $Biaya[4] = $request->input('InputBiayaUniv');
+
+        // $this->console_log($Biaya);
+        
+        $iUsia = $request->input('InputUsia'); 
+        $iTenor = $request->input('InputTenor'); 
+        $gaji= $request->input('InputGaji');
+
+        for($i=0;$i<5;$i++){ //looping jarak usia
+            $j[$i] = $starts[$i] - $iUsia;
+            if($j[$i]<0){ $j[$i]=0; }
+            if($i==4){ $years = $j[$i];}
+        }
+        // $this->console_log($j[1]);
+        
+ 
+        for($i=0;$i<5;$i++){ //looping future value
+            $ftotal += $Biaya[$i] * pow((1+$s),$j[$i]);
+        }
+        for($i=0;$i<5;$i++){ //total biaya
+            $totalbiaya += $Biaya[$i];
+        }
+        $cicilan = $totalbiaya/($iTenor*12);
+
+        if($cicilan >= (0.3*$gaji)){
+            $rekom = 0;
+        }
+        //calculate query times
+        $time_elapsed_secs = microtime(true) - $start;
+        $time_elapsed_secs = number_format($time_elapsed_secs, 4, '.', '');
+
+        $total_ = number_format($ftotal,2);
+        $cicilan_ = number_format($cicilan,2);
+
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$years));
+        return $datas;
+
+
+    }
 
     /**
      * Display the specified resource.
@@ -151,4 +203,13 @@ class SimulasiController extends Controller
     {
         //
     }
+    function console_log($output, $with_script_tags = true) {
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
+');';
+    if ($with_script_tags) {
+        $js_code = '<script>' . $js_code . '</script>';
+    }
+    echo $js_code;
+}
+
 }

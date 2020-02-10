@@ -33,12 +33,14 @@
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 <script type="text/javascript">
   // When ready.
     $(function() {
       var extra = 0;
-      var $input = $("#Inputan");
+      // var $input = $("#Inputan");
+      var $input = $('[id^=Inputan]');
 
       $input.on("keyup", function(event) {
 

@@ -47,43 +47,49 @@
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Rencana ibadah haji (dalam tahun)</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="InputJangka" name="InputJangka">
+                                <input type="number" class="form-control" id="InputJangka" name="InputJangka">
+                            </div>
+                        </div>
+                        <div class="form-group row row">
+                            <label for="InputJangka" class="col-sm-2 col-form-label">Jumlah jamaah</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="InputJamaah" name="InputJamaah">
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Pilihan program haji</label>
                             <div class="col-sm-10">
-                                {{ Form::radio('status','0',true,array('id' => 'status','class'=>'')) }} Regular {{ Form::radio('status','1',false,array('id' => 'status','class'=>'')) }} ONH Plus
+                                {{ Form::radio('status','0',true,array('id' => 'statusRegular','class'=>'')) }} Regular {{ Form::radio('status','1',false,array('id' => 'statusONH','class'=>'')) }} ONH Plus
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Uang saku</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Inputan" name="InputSaku" >
+                                <input type="text" class="form-control" id="InputanSaku" name="InputSaku" >
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Vaksin meningitis</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Inputan" name="InputVaksin">
+                                <input type="text" class="form-control" id="InputanVaksin" name="InputVaksin" value="305000">
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Dana Darurat</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Inputan" name="InputOleh">
+                                <input type="text" class="form-control" id="InputanDana" name="InputOleh">
                             </div>
                         </div>
                         <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Oleh-oleh</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Inputan" name="InputOleh">
+                                <input type="text" class="form-control" id="InputanOleh" name="InputOleh">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
                             <div class="col-sm-10">
-                                <input type="text" step="0.01" class="form-control" id="Inputan" name="InputGaji" placeholder="Enter gaji" value=2000000>
+                                <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
                             </div>
                         </div>
                         <!-- <div class="form-check">

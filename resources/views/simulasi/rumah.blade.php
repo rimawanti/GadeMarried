@@ -52,7 +52,6 @@
                         <option value="Jakarta Selatan">Jakarta Selatan</option>
                         <option value="Jakarta Barat">Jakarta Barat</option>
                         <option value="Jakarta Pusat">Jakarta Pusat</option>
-                        <option value="Kepulauan Seribu">Kepulauan Seribu</option>
                       </select>
                     </div>
                   </div>
@@ -69,24 +68,24 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputHargaRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
+                    <label for="InputHargaProperti" class="col-sm-2 col-form-label">Harga Properti </label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">
+                    	<input type="text" class="form-control" id="InputHargaProperti" placeholder="Enter Harga Jual Properti">
                     </div>
                   </div>
-                  <div class="form-group row row">
+                  <!-- <div class="form-group row row">
                     <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputNJOP" placeholder="Enter Harga Sesuai NJOP">
                     </div>
-                  </div>
-                  <div class="form-group row row">
+                  </div> -->
+                  <!-- <div class="form-group row row">
                     <label for="InputNJOPTKP" class="col-sm-2 col-form-label">NJOPTKP/NPTKP</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="InputNJOPTKP" placeholder="Enter NJOPTKP/NPTKP">
                     </div>
-                  </div>
-                  <div class="form-group row row">
+                  </div> -->
+                  <!-- <div class="form-group row row">
                     <label for="InputPPnBM" class="col-sm-2 col-form-label">Pajak Pembelian Barang Mewah</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pembelian Barang Mewah">
@@ -103,7 +102,7 @@
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputBiayaNotaris" placeholder="Enter Biaya Notaris/PPAT">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="form-group row row">
                     <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
                     <div class="col-sm-10">

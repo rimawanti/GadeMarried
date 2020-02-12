@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>PENDIDIKAN ANAKkkkkk</b></h1>
+                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>NIKAH NANTI</b></h1>
                   <!-- <a href="javascript:void(0);">Selengkapnya</a> -->
                 </div>
               </div>
@@ -29,68 +29,73 @@
                 <!-- /.d-flex -->
                 <div class="position-relative mb-4"></div>
                 <div class="container"> 
-                <!--- SILAHKAN EDIT DISINI --> 
-               <form method="post" action=hitungPendidikan class="form-horizontal">
+               <form action="getHitungNikah" method="post" class="form-horizontal">
                	{!! csrf_field() !!}
                	 <div class="card-body">
                   <div class="form-group row row">
-                    <label for="InputName" class="col-sm-2 col-form-label">Nama </label>
+                    <label for="InputName" class="col-sm-2 col-form-label">Nama dan Nama Pasangan</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputName" name="InputanName" placeholder="Masukkan Nama Anda">
+                    	<input type="text" class="form-control" id="InputName" placeholder="Enter Nama Pasangan">
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputUsia" class="col-sm-2 col-form-label" >Usia Anak Saat Ini (dalam tahun)</label>
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana pernikahan (dalam tahun)</label>
                     <div class="col-sm-10">
-                   	<input type="number" class="form-control" id="InputUsia" name="InputUsia" placeholder="Dalam tahun" value=1 min=1 max=10>
+                   	<input type="text" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
+                	</div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputPra" class="col-sm-2 col-form-label">Dana pra wedding</label>
+                    <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="InputanPra" name="InputPra" placeholder="Enter dana pernikahan" value=1000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputSouvenir" class="col-sm-2 col-form-label">Dana souvenir (per undangan)</label>
+                    <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="InputanSouvenir" name="InputSouvenir" placeholder="Enter dana souvenir" value=5000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputUndangan" class="col-sm-2 col-form-label">Banyak Undangan</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="InputUndangan" name="InputUndangan" placeholder="Enter dana undangan" value=100>
+               	 	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputCatering" class="col-sm-2 col-form-label">Biaya Catering</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="InputanCatering" name="InputCatering" placeholder="Enter dana catering" value=10000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputMUA" class="col-sm-2 col-form-label">Biaya MUA</label>
+                    <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="InputanMUA" name="InputMUA" placeholder="Enter dana MUA" value=1000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputVenue" class="col-sm-2 col-form-label">Biaya Gedung/Rumah</label>
+                    <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="InputanVenue" name="InputVenue" placeholder="Enter dana Venue" value=10000000>
+               		</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputVendor" class="col-sm-2 col-form-label">Biaya Wedding/Event Organizer</label>
+                    <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="InputanVendor" name="InputVendor" placeholder="Enter dana WO" value=1000000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputDekor" class="col-sm-2 col-form-label">Biaya Dekorasi</label>
+                    <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="InputanDekor" name="InputDekor" placeholder="Enter Dekorasi" value=10000000>
                 	</div>
                   </div>
                   <div class="form-group row">
                     <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputPAUD" class="col-sm-2 col-form-label">Biaya Sekolah PAUD saat ini:</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaPAUD" name="InputBiayaPAUD" placeholder="Enter biaya PAUD" value=10000000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputTK" class="col-sm-2 col-form-label">Biaya Sekolah TK saat ini:</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaTK" name="InputBiayaTK" placeholder="Enter biaya TK" value=12500000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputSD" class="col-sm-2 col-form-label">Biaya Sekolah SD saat ini:</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaSD" name="InputBiayaSD" placeholder="Enter biaya SD" value=27000000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputSMP" class="col-sm-2 col-form-label">Biaya Sekolah SMP saat ini:</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaSMP" name="InputBiayaSMP" placeholder="Enter biaya SMP" value=30000000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputSMA" class="col-sm-2 col-form-label">Biaya Sekolah SMA saat ini:</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaSMA" name="InputBiayaSMA" placeholder="Enter biaya SMA" value=32000000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputUniv" class="col-sm-2 col-form-label">Biaya Universitas saat ini:</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaUniv" name="InputBiayaUniv" placeholder="Enter biaya Universitas" value=40000000>
-                	</div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="InputWaktu" class="col-sm-2 col-form-label">Jangka waktu menabung (tahun):</label>
-                    <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputTenor" name="InputTenor" placeholder="Enter waktu menabung" value=1>
+                    <input type="text" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
                 	</div>
                   </div>
                   <!-- <div class="form-check">
@@ -99,12 +104,13 @@
                   </div> -->
                 </div>
                 <!-- /.card-body -->
+
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">HITUNG</button> -->
                 </div>
                 <div class="d-flex flex-row justify-content-end">
                   <!-- <input type="submit" class="btn btn-primary" value="HITUNG"> -->
-                 <input type="submit" class="btn btn-primary" value="HITUNG" id="btn-todo">
+                 <input type="button" class="btn btn-primary" value="HITUNG" id="btn-todo">
                 </div>
               </form>
                 </div> 
@@ -139,10 +145,10 @@
                          class="img-circle" alt="Responsive Image" 
                          width="307" height="240" />  -->
                          
-                </div>
-                <div class="d-flex flex-row justify-content-end">
-                <input type="button" value="Hitung Ulang" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
-                </div>
+                  </div>
+                  <div class="d-flex flex-row justify-content-end">
+                    <a href="{{url('/simulasi/nikah')}}"><input type="button" value="Hitung Ulang" id="hitungulang" class="btn btn-danger"></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,7 +159,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
 
 </script>
-<script type="text/javascript" >
+<script type="text/javascript">
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
@@ -161,27 +167,30 @@
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
          $.ajax({
-                  url: 'hitungPendidikan',
+                  url: '{{url("simulasi/nikah/hitung")}}',
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "InputBiayaTK" : $('#InputanBiayaTK').val(),
-                    "InputBiayaSD" : $('#InputanBiayaSD').val(),
-                    "InputBiayaSMP" : $('#InputanBiayaSMP').val(),
-                    "InputBiayaSMA" : $('#InputanBiayaSMA').val(),
-                    "InputBiayaUniv" : $('#InputanBiayaUniv').val(),
-                    "InputTenor" : $('#InputTenor').val(),
-                    "InputUsia" : $('#InputUsia').val(),
-                    "InputGaji" : $('#InputGaji').val(),
+                    "catering" : $('#InputanCatering').val(),
+                    "vendor" : $('#InputanVendor').val(),
+                    "dekor" : $('#InputanDekor').val(),
+                    "mua" : $('#InputanMUA').val(),
+                    "pra" : $('#InputanPra').val(),
+                    "venue" : $('#InputanVenue').val(),
+                    "gaji" : $('#InputanGaji').val(),
+                    "souvenir" : $('#InputanSouvenir').val(),
+                    "undangan" : $('#InputUndangan').val(),
+                    "jangka" : $('#InputJangka').val(),
+
                   },
                   success: function(data)
                   {
                       var data= $.parseJSON(data);
-                      // document.getElementById("loader-no-spin").style.display = "none";
+                      //window.location.href = "nilai/"+data.cicilan;
                       document.getElementById("hitungulang").style.display = "block"; 
                       document.getElementById("rekom").style.display = "block"; 
-                      // $('#simpan').show();
-                      //alert(data.nilai)
+                      $("#btn-todo").attr("disabled", true);
+                      
                       if(data.rekom == 0){
                          $('#rekom').val("Belum direkomendasikan ");
                          $('#rekom').css({'class': 'btn btn-danger btn-block'});
@@ -198,13 +207,15 @@
                       $('#nilai').text("Cicilan per bulan: "+data.cicilan);
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
-                      $('#total').text("Biaya pendidikan anak diprediksikan menjadi "+data.total+" dalam "+data.years+"tahun");
-                  },
-                  error: function (response) {
-                    alert("error! "+response); 
-                }
+                      $('#total').text("Biaya pernikahan diprediksikan menjadi "+data.total);
+
+                      var url = document.location.href+"/"+data.cicilan;
+                      // document.location = url;
+                      window.history.replaceState(null, null, url);
+                  }
          }); 
        });
   });
 </script>
+
 </html>

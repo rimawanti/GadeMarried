@@ -72,6 +72,11 @@ class SimulasiController extends Controller
         $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom));
         return $datas;
     }
+    
+    public function getNilai($nilai)
+    {
+        return $datas = json_encode(array('status'=>'success'));
+    }
 
     public function hitungPinjaman(Request $request)
     {
@@ -108,6 +113,10 @@ class SimulasiController extends Controller
     }
      public function hitungPendidikan(Request $request)
     {
+        // $this->validate($request, array(
+        //     'category' => 'required',
+        //     'InputUsia' => 'digits_between:2,5',
+        // ));
         $start = microtime(true);
         $starts = array(4,6,12,15,18); //start usia tk,sd,smp,sma,kuliah
         $s = 0.15; /*suku bunga -> inflasi*/ $rekom=1; 
@@ -155,6 +164,8 @@ class SimulasiController extends Controller
 
         $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$years));
         return $datas;
+
+        //return redirect()->route('simulasi.nilai',array($cicilan_));
 
 
     }

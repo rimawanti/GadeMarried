@@ -141,7 +141,7 @@
                          
                 </div>
                 <div class="d-flex flex-row justify-content-end">
-                <input type="button" value="Hitung Ulang" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
+                <a href="{{url('/simulasi/pendidikan')}}"><input type="button" value="Hitung Ulang" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger"></a>
                 </div>
                 </div>
               </div>
@@ -161,7 +161,7 @@
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
          $.ajax({
-                  url: 'hitungPendidikan',
+                  url: '{{url("simulasi/pendidikan/hitung")}}',
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
@@ -177,11 +177,11 @@
                   success: function(data)
                   {
                       var data= $.parseJSON(data);
-                      // document.getElementById("loader-no-spin").style.display = "none";
+
                       document.getElementById("hitungulang").style.display = "block"; 
-                      document.getElementById("rekom").style.display = "block"; 
-                      // $('#simpan').show();
-                      //alert(data.nilai)
+                      document.getElementById("rekom").style.display = "block";
+                       $("#btn-todo").attr("disabled", true); 
+
                       if(data.rekom == 0){
                          $('#rekom').val("Belum direkomendasikan ");
                          $('#rekom').css({'class': 'btn btn-danger btn-block'});
@@ -199,6 +199,10 @@
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
                       $('#total').text("Biaya pendidikan anak diprediksikan menjadi "+data.total+" dalam "+data.years+"tahun");
+
+                      var url = document.location.href+"/"+data.cicilan;
+                      // document.location = url;
+                      window.history.replaceState(null, null, url);
                   },
                   error: function (response) {
                     alert("error! "+response); 

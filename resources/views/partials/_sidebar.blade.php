@@ -38,17 +38,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/simulasi/tabungan')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'tabungan'  ? "nav-link active" : "nav-link"}}">
+                <a href="{{url('/simulasi/nikah')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'nikah'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Nikah Nanti</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="{{url('/simulasi/pinjam')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pinjam'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Nikah Sekarang</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="{{url('/simulasi/pendidikan')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'pendidikan'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
@@ -67,12 +67,12 @@
                   <p>Kendaraan</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="{{url('/simulasi/travel')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'travel'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Travelling</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="{{url('/simulasi/haji_umroh')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'haji_umroh'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>

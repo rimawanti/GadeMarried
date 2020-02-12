@@ -42,41 +42,44 @@ Route::get('/profile/create', function () {
 
 
 /* ROUTING SIMULASI */
-Route::get('/simulasi/tabungan', function () {
-    return view('simulasi.index');
+Route::get('/simulasi/nikah', function () {
+    return view('simulasi.index_');
 });
-Route::get('/simulasi/pinjam', function () {
-    return view('simulasi.index_pinjaman');
+Route::get('/simulasi/nikah/{nilai}', function () {
+    return view('simulasi.index_');
 });
 Route::get('/simulasi/travel', function () {
     return view('simulasi.travel');
 });
 Route::get('/simulasi/haji_umroh', function () {
-    return view('simulasi.haji');
+    return view('simulasi.haji_');
 });
 Route::get('/simulasi/pendidikan', function () {
-    return view('simulasi.pendidikan');
+    return view('simulasi.pendidikan_');
 });
 Route::get('/simulasi/rumah', function () {
-    return view('simulasi.rumah');
+    return view('simulasi.rumah_');
 });
 Route::get('/simulasi/kendaraan', function () {
-    return view('simulasi.kendaraan');
+    return view('simulasi.kendaraan_');
 });
+// Route::get('/simulasi/pinjam', function () {
+//     return view('simulasi.index_pinjaman');
+// });
+
+//Route::get('simulasi/nilai/{nilai}', ['as' => 'simulasi.nilai','uses' => 'SimulasiController@getNilai']);
 
 //ajax function
-Route::post('simulasi/hitung', 'SimulasiController@hitung');
+Route::post('simulasi/nikah/hitung', ['as' => 'sim.nikah','uses' => 'SimulasiController@hitung']);
+Route::post('simulasi/pendidikan/hitung', ['as' => 'sim.edu','uses' => 'SimulasiController@hitungPendidikan']);
 
-Route::post('simulasi/hitungPinjaman', 'SimulasiController@hitungPinjaman');
-
-Route::post('simulasi/hitungPendidikan', 'SimulasiController@hitungPendidikan');
+//Route::post('simulasi/hitungPinjaman', 'SimulasiController@hitungPinjaman'); //gak dipake
 
 
 /* ROUTING PRODUK */
 Route::get('/produk', function () {
     return view('produk.index');
 });
-
 Route::get('/produk/daftar', function () {
     return view('produk.daftar');
 });

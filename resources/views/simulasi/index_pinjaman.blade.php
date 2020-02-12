@@ -119,7 +119,8 @@
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
 
-       $('#btn-todo').on("click",function() {
+       $('#btn-todo').on("click",function(e) {
+        e.preventDefault();
          $.ajax({
                    url: 'hitungPinjaman',
                   method: 'POST',

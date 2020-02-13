@@ -206,13 +206,31 @@ class SimulasiController extends Controller
     public function hitungRumah(Request $request)
     {
         $start = microtime(true);
-        $biaya = 35000000; $kenaikan = 5000000;
+        $s = 0.085; /*suku bunga -> inflasi*/
         $total = 0; $rekom=1;
         $rumah = $this->removeComma($request->input('InputRumah'));
-        $provinsi= $request->input('InputProvinsi');
-        $tanah = $this->removeComma($request->input('InputTanah'));
+        $tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
+        $notaris = $this->removeComma($request->input('InputNotaris'));
         $jangka= $request->input('InputJangka');
         $gaji= $this->removeComma($request->input('InputGaji'));
+
+          // $this->console_log("dana: ".$dana."proggram: ".$program."vaksin: ".$vaksin."saku: ".$saku."jemaah: ".$jemaah."oleh: ".$oleh."jangka: ".$jangka."gaji: ".$gaji); die(); 
+        
+        $total = $rumah+$notaris+$tidakpajak+($s*$jangka);
+        $cicilan = $total/($jangka*12);
+
+        if($cicilan >= (0.3*$gaji)){
+            $rekom = 0;
+        }
+        //calculate query times
+        $time_elapsed_secs = microtime(true) - $start;
+        $time_elapsed_secs = number_format($time_elapsed_secs, 4, '.', '');
+
+        $total_ = number_format($total,2);
+        $cicilan_ = number_format($cicilan,2);
+
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom));
+        return $datas;
     }
 
     /**

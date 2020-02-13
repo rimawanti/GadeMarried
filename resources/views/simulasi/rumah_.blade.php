@@ -180,7 +180,7 @@
                     width="307" height="240" />  -->         
             </div>
             <div class="d-flex flex-row justify-content-end">
-              <input type="button" value="Hitung Ulang" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
+              <a href="{{url('/simulasi/rumah')}}"><input type="button" value="Hitung Ulang" id="hitungulang" class="btn btn-danger"></a>
             </div>
           </div>
         </div>

@@ -210,12 +210,17 @@ class SimulasiController extends Controller
         $total = 0; $rekom=1;
         $rumah = $this->removeComma($request->input('InputRumah'));
         $tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
-        $notaris = $this->removeComma($request->input('InputNotaris'));
+        //$notaris = $this->removeComma($request->input('InputNotaris'));
         $jangka= $request->input('InputJangka');
         $gaji= $this->removeComma($request->input('InputGaji'));
-
-          // $this->console_log("dana: ".$dana."proggram: ".$program."vaksin: ".$vaksin."saku: ".$saku."jemaah: ".$jemaah."oleh: ".$oleh."jangka: ".$jangka."gaji: ".$gaji); die(); 
         
+        //rincian biaya notaris
+        $akta = 0.01*$rumah; //akta jual beli 1% dari harga jual
+        $baliknama = 0.01*$rumah; //biaya balik nama 1% dari harga jual
+        $sertif = 100000; //cek sertifikat
+        $bphtb = 0.05*($rumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
+        $notaris = $akta+$baliknama+$sertif+$bphtb;
+
         $total = $rumah+$notaris+$tidakpajak+($s*$jangka);
         $cicilan = $total/($jangka*12);
 

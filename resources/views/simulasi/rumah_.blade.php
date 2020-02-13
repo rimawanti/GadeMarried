@@ -91,7 +91,7 @@
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
               </div>
-            </div> -->
+            </div>
             <!-- <div class="form-group row row">
               <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
               <div class="col-sm-10">
@@ -116,12 +116,12 @@
                 <input type="text" class="form-control" id="InputAsuransi" placeholder="Enter Asuransi Kebakaran">
               </div>
             </div> -->
-            <div class="form-group row row">
+            <!-- <div class="form-group row row">
               <label for="InputNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputNotaris" placeholder="Enter Biaya Notaris/PPAT">
               </div>
-            </div>
+            </div> -->
             <div class="form-group row row">
               <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
               <div class="col-sm-10">
@@ -208,7 +208,6 @@
                     "InputRumah" : $('#InputRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),
                     "InputGaji" : $('#InputGaji').val(),
-                    "InputNotaris" : $('#InputNotaris').val(),
                     "InputJangka" : $('#InputJangka').val(),
                   },
                   success: function(data)

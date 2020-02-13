@@ -11,12 +11,12 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-           <li class="nav-item">
+           <!-- <li class="nav-item">
             <a href="{{url('/')}}" class="{{Request::is('/') ? "nav-link active" : "nav-link"}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Beranda
-               <!--  <span class="right badge badge-danger">New</span> -->
+               <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
@@ -27,7 +27,7 @@
                 Informasi Produk
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="{{ Request::segment(1) === 'simulasi' ? "nav-item has-treeview menu-open" : "nav-item has-treeview"}}">
             <a class="nav-link">
               <i class="nav-icon fas fa-calculator"></i>
@@ -87,7 +87,7 @@
               </li> -->
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="{{url('/profile')}}" class="{{ Request::segment(1) === 'profille' ? "nav-link active" : "nav-link"}}">
               <i class="nav-icon fas fa-user"></i>
               <p>
@@ -110,7 +110,7 @@
                 Contact
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

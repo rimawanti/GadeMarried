@@ -73,6 +73,7 @@ Route::get('/simulasi/kendaraan', function () {
 Route::post('simulasi/nikah/hitung', ['as' => 'sim.nikah','uses' => 'SimulasiController@hitung']);
 Route::post('simulasi/pendidikan/hitung', ['as' => 'sim.edu','uses' => 'SimulasiController@hitungPendidikan']);
 Route::post('simulasi/haji/hitung', ['as' => 'sim.haji','uses' => 'SimulasiController@hitungHaji']);
+Route::post('simulasi/rumah/hitung', ['as' => 'sim.rumah','uses' => 'SimulasiController@hitungRumah']);
 //Route::post('simulasi/hitungPinjaman', 'SimulasiController@hitungPinjaman'); //gak dipake
 
 

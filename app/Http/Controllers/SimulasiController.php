@@ -203,6 +203,10 @@ class SimulasiController extends Controller
         return $datas;
 
     }
+    public function hitungRumah(Request $request)
+    {
+
+    }
 
     /**
      * Display the specified resource.

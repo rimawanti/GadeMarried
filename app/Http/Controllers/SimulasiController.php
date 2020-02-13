@@ -208,6 +208,7 @@ class SimulasiController extends Controller
         $start = microtime(true);
         $s = 0.085; /*suku bunga -> inflasi*/
         $total = 0; $rekom=1;
+
         $rumah = $this->removeComma($request->input('InputRumah'));
         $tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         //$notaris = $this->removeComma($request->input('InputNotaris'));
@@ -221,7 +222,7 @@ class SimulasiController extends Controller
         $bphtb = 0.05*($rumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
         $notaris = $akta+$baliknama+$sertif+$bphtb;
 
-        $total = $rumah+$notaris+$tidakpajak+($s*$jangka);
+        $total = $notaris+$tidakpajak+($rumah+($rumah*($s*$jangka)));
         $cicilan = $total/($jangka*12);
 
         if($cicilan >= (0.3*$gaji)){

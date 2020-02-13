@@ -205,7 +205,14 @@ class SimulasiController extends Controller
     }
     public function hitungRumah(Request $request)
     {
-
+        $start = microtime(true);
+        $biaya = 35000000; $kenaikan = 5000000;
+        $total = 0; $rekom=1;
+        $rumah = $this->removeComma($request->input('InputRumah'));
+        $provinsi= $request->input('InputProvinsi');
+        $tanah = $this->removeComma($request->input('InputTanah'));
+        $jangka= $request->input('InputJangka');
+        $gaji= $this->removeComma($request->input('InputGaji'));
     }
 
     /**

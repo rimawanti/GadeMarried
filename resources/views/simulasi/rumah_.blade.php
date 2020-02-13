@@ -42,7 +42,7 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-group row row">
+                  <!-- <div class="form-group row row">
                     <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
                     <div class="col-sm-10">
                       <select class="custom-select" id="inputGroupSelect01">
@@ -55,7 +55,7 @@
                         <option value="Kepulauan Seribu">Kepulauan Seribu</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="form-group row row">
                     <label for="InputLuasTanah" class="col-sm-2 col-form-label">Luas Tanah (meter persegi)</label>
                     <div class="col-sm-10">
@@ -74,7 +74,7 @@
                     	<input type="text" class="form-control" id="InputHargaRumah" placeholder="Enter Harga Jual Rumah">
                     </div>
                   </div>
-                  <div class="form-group row row">
+                  <!-- <div class="form-group row row">
                     <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputNJOP" placeholder="Enter Harga Sesuai NJOP">
@@ -91,19 +91,19 @@
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pembelian Barang Mewah">
                     </div>
-                  </div>
-                  <div class="form-group row row">
+                  </div> -->
+                  <!-- <div class="form-group row row">
                     <label for="InputAsuransi" class="col-sm-2 col-form-label">Asuransi Kebakaran</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputAsuransi" placeholder="Enter Asuransi Kebakaran">
                     </div>
-                  </div>
-                  <div class="form-group row row">
+                  </div> -->
+                  <!-- <div class="form-group row row">
                     <label for="InputBiayaNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
                     <div class="col-sm-10">
                     	<input type="text" class="form-control" id="InputBiayaNotaris" placeholder="Enter Biaya Notaris/PPAT">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="form-group row row">
                     <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
                     <div class="col-sm-10">

@@ -83,13 +83,13 @@
             <div class="form-group row row">
               <label for="InputRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputRumah" placeholder="Enter Harga Jual Rumah">
+                <input type="text" class="form-control" id="InputRumah" placeholder="Enter Harga Jual Rumah" value="300000000">
               </div>
             </div>
             <div class="form-group row row">
               <label for="InputTidakPajak" class="col-sm-2 col-form-label">NPOPTKP</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak">
+                <input type="text" class="form-control" id="InputTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
               </div>
             </div> -->
             <!-- <div class="form-group row row">
@@ -116,12 +116,12 @@
                 <input type="text" class="form-control" id="InputAsuransi" placeholder="Enter Asuransi Kebakaran">
               </div>
             </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputBiayaNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
+            <div class="form-group row row">
+              <label for="InputNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputBiayaNotaris" placeholder="Enter Biaya Notaris/PPAT">
+                <input type="text" class="form-control" id="InputNotaris" placeholder="Enter Biaya Notaris/PPAT">
               </div>
-            </div> -->
+            </div>
             <div class="form-group row row">
               <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
               <div class="col-sm-10">
@@ -131,7 +131,7 @@
             <div class="form-group row">
               <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
+                    <input type="text" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=5000000>
                 </div>
             </div>
             <!-- <div class="form-check">
@@ -204,11 +204,11 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "InputTanah" : $('#InputTanah').val(),
+                    "InputTidakPajak" : $('#InputTidakPajak').val(),
                     "InputRumah" : $('#InputRumah').val(),
-                    "InputProvinsi" : $("input[name='status']:checked").val(),
                     "InputTenor" : $('#InputTenor').val(),
                     "InputGaji" : $('#InputGaji').val(),
+                    "InputNotaris" : $('#InputNotaris').val(),
                     "InputJangka" : $('#InputJangka').val(),
                   },
                   success: function(data)

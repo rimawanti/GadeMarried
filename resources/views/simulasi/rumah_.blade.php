@@ -44,15 +44,16 @@
                   {{  Form::text('InputName',null,array('class' => 'form-control','placeholder'=>'Masukkan nama')) }}
               </div>
             </div>
-            <div class="form-group row row">
+            <!-- <div class="form-group row row">
               <label for="PilihProvinsi" class="col-sm-2 col-form-label">Provinsi</label>
               <div class="col-sm-10">
                 <select class="custom-select" id="InputProvinsi">
                   <option selected>--Pilih Provinsi--</option>
                   <option value="DKI Jakarta">DKI Jakarta</option>
+                  <option value="Jawa Barat">Jawa Barat</option>
                 </select>
               </div>
-            </div>
+            </div> -->
             <!-- <div class="form-group row row">
               <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
               <div class="col-sm-10">
@@ -67,7 +68,7 @@
                 </select>
               </div>
             </div> -->
-            <div class="form-group row row">
+            <!-- <div class="form-group row row">
               <label for="InputTanah" class="col-sm-2 col-form-label">Luas Tanah (meter persegi)</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputTanah" placeholder="Enter Luas Tanah">
@@ -78,13 +79,19 @@
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputBangunan" placeholder="Enter Luas Bangunan">
               </div>
-            </div>
+            </div> -->
             <div class="form-group row row">
               <label for="InputRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputRumah" placeholder="Enter Harga Jual Rumah">
               </div>
             </div>
+            <div class="form-group row row">
+              <label for="InputTidakPajak" class="col-sm-2 col-form-label">NPOPTKP</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="InputTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak">
+              </div>
+            </div> -->
             <!-- <div class="form-group row row">
               <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
               <div class="col-sm-10">

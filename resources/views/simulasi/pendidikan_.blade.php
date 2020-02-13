@@ -30,68 +30,68 @@
                 <div class="position-relative mb-4"></div>
                 <div class="container"> 
                 <!--- SILAHKAN EDIT DISINI --> 
-               <form method="post" action=hitungPendidikan class="form-horizontal">
-               	{!! csrf_field() !!}
-               	 <div class="card-body">
+               <form method="post" class="form-horizontal">
+                {!! csrf_field() !!}
+                 <div class="card-body">
                   <div class="form-group row row">
                     <label for="InputName" class="col-sm-2 col-form-label">Nama </label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputName" name="InputanName" placeholder="Masukkan Nama Anda">
+                      <input type="text" class="form-control" id="InputName" name="InputanName" placeholder="Masukkan Nama Anda">
                     </div>
                   </div>
                   <div class="form-group row row">
                     <label for="InputUsia" class="col-sm-2 col-form-label" >Usia Anak Saat Ini (dalam tahun)</label>
                     <div class="col-sm-10">
-                   	<input type="number" class="form-control" id="InputUsia" name="InputUsia" placeholder="Dalam tahun" value=1 min=1 max=10>
-                	</div>
+                    <input type="number" class="form-control" id="InputUsia" name="InputUsia" placeholder="Dalam tahun" value=1>
+                  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
-                	</div>
                   </div>
-                  <div class="form-group row">
+                  </div>
+                  <!-- <div class="form-group row">
                     <label for="InputPAUD" class="col-sm-2 col-form-label">Biaya Sekolah PAUD saat ini:</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanBiayaPAUD" name="InputBiayaPAUD" placeholder="Enter biaya PAUD" value=10000000>
-                	</div>
                   </div>
+                  </div> -->
                   <div class="form-group row">
                     <label for="InputTK" class="col-sm-2 col-form-label">Biaya Sekolah TK saat ini:</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanBiayaTK" name="InputBiayaTK" placeholder="Enter biaya TK" value=12500000>
-                	</div>
+                  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputSD" class="col-sm-2 col-form-label">Biaya Sekolah SD saat ini:</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanBiayaSD" name="InputBiayaSD" placeholder="Enter biaya SD" value=27000000>
-                	</div>
+                  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputSMP" class="col-sm-2 col-form-label">Biaya Sekolah SMP saat ini:</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanBiayaSMP" name="InputBiayaSMP" placeholder="Enter biaya SMP" value=30000000>
-                	</div>
+                  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputSMA" class="col-sm-2 col-form-label">Biaya Sekolah SMA saat ini:</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanBiayaSMA" name="InputBiayaSMA" placeholder="Enter biaya SMA" value=32000000>
-                	</div>
+                  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputUniv" class="col-sm-2 col-form-label">Biaya Universitas saat ini:</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputanBiayaUniv" name="InputBiayaUniv" placeholder="Enter biaya Universitas" value=40000000>
-                	</div>
+                  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputWaktu" class="col-sm-2 col-form-label">Jangka waktu menabung (tahun):</label>
                     <div class="col-sm-10">
                     <input type="text" step="0.01" class="form-control" id="InputTenor" name="InputTenor" placeholder="Enter waktu menabung" value=1>
-                	</div>
+                  </div>
                   </div>
                   <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="Check1">
@@ -104,7 +104,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-end">
                   <!-- <input type="submit" class="btn btn-primary" value="HITUNG"> -->
-                 <input type="submit" class="btn btn-primary" value="HITUNG" id="btn-todo">
+                 <input type="button" class="btn btn-primary" value="HITUNG" id="btn-todo">
                 </div>
               </form>
                 </div> 

@@ -38,16 +38,16 @@ class SimulasiController extends Controller
         //$jangka = 0;
         $rekom = 1;
 
-        $catering = $request->input('catering');
-        $wo = $request->input('vendor');
-        $dekor = $request->input('dekor');
-        $mua  = $request->input('mua');
-        $pra= $request->input('pra');
-        $venue= $request->input('venue');
-        $jangka= $request->input('jangka');
-        $gaji= $request->input('gaji');
-        $souvenir= $request->input('souvenir');
-        $undangan= $request->input('undangan');
+        $catering = $this->removeComma($request->input('catering'));
+        $wo = $this->removeComma($request->input('vendor'));
+        $dekor = $this->removeComma($request->input('dekor'));
+        $mua  = $this->removeComma($request->input('mua'));
+        $pra= $this->removeComma($request->input('pra'));
+        $venue= $this->removeComma($request->input('venue'));
+        $jangka= $this->removeComma($request->input('jangka'));
+        $gaji= $this->removeComma($request->input('gaji'));
+        $souvenir= $this->removeComma($request->input('souvenir'));
+        $undangan= $this->removeComma($request->input('undangan'));
         $undanganavg = 10000;
 
         $jumlah = $catering + $wo + $dekor + $mua + $pra + $venue + ($souvenir*$undangan) + ($undangan*$undanganavg);
@@ -124,17 +124,17 @@ class SimulasiController extends Controller
         $j = array();  //j stand for jarak usia
         $Biaya = array(); 
 
-        $Biaya[0] = $request->input('InputBiayaTK');
-        $Biaya[1] = $request->input('InputBiayaSD');
-        $Biaya[2] = $request->input('InputBiayaSMP');
-        $Biaya[3] = $request->input('InputBiayaSMA');
-        $Biaya[4] = $request->input('InputBiayaUniv');
+        $Biaya[0] = $this->removeComma($request->input('InputBiayaTK'));
+        $Biaya[1] = $this->removeComma($request->input('InputBiayaSD'));
+        $Biaya[2] = $this->removeComma($request->input('InputBiayaSMP'));
+        $Biaya[3] = $this->removeComma($request->input('InputBiayaSMA'));
+        $Biaya[4] = $this->removeComma($request->input('InputBiayaUniv'));
 
         // $this->console_log($Biaya);
         
         $iUsia = $request->input('InputUsia'); 
         $iTenor = $request->input('InputTenor'); 
-        $gaji= $request->input('InputGaji');
+        $gaji= $this->removeComma($request->input('InputGaji'));
 
         for($i=0;$i<5;$i++){ //looping jarak usia
             $j[$i] = $starts[$i] - $iUsia;
@@ -166,7 +166,41 @@ class SimulasiController extends Controller
         return $datas;
 
         //return redirect()->route('simulasi.nilai',array($cicilan_));
+    }
+    public function hitungHaji(Request $request)
+    {
+        $start = microtime(true);
+        $biaya = 35000000; $kenaikan = 5000000;
+        $total = 0; $rekom=1;
+        $dana = $this->removeComma($request->input('InputDana'));
+        $program = $request->input('InputProgram');
+        $vaksin = $this->removeComma($request->input('InputVaksin'));
+        $saku  = $this->removeComma($request->input('InputSaku'));
+        $jemaah = $request->input('InputJamaah');
+        $oleh = $this->removeComma($request->input('InputOleh'));
+        $jangka= $request->input('InputJangka');
+        $gaji= $this->removeComma($request->input('InputGaji'));
 
+        // $this->console_log("dana: ".$dana."proggram: ".$program."vaksin: ".$vaksin."saku: ".$saku."jemaah: ".$jemaah."oleh: ".$oleh."jangka: ".$jangka."gaji: ".$gaji); die();
+
+        if($program==1){
+            $biaya = 115000000; 
+        }
+        $total = $jemaah*($dana+$vaksin+$saku+$oleh+$biaya+($kenaikan*$jangka));
+        $cicilan = $total/($jangka*12);
+
+        if($cicilan >= (0.3*$gaji)){
+            $rekom = 0;
+        }
+        //calculate query times
+        $time_elapsed_secs = microtime(true) - $start;
+        $time_elapsed_secs = number_format($time_elapsed_secs, 4, '.', '');
+
+        $total_ = number_format($total,2);
+        $cicilan_ = number_format($cicilan,2);
+
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom));
+        return $datas;
 
     }
 
@@ -179,6 +213,12 @@ class SimulasiController extends Controller
     public function show($id)
     {
         //
+    }
+
+    function removeComma($num){
+        $numconv = (int)str_replace(',', '', $num);
+
+        return $numconv;
     }
 
     /**

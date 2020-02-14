@@ -83,13 +83,13 @@
             <div class="form-group row row">
               <label for="InputRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputRumah" placeholder="Enter Harga Jual Rumah" value="300000000">
+                <input type="text" class="form-control" id="InputanRumah" placeholder="Enter Harga Jual Rumah" value="300000000">
               </div>
             </div>
             <div class="form-group row row">
               <label for="InputTidakPajak" class="col-sm-2 col-form-label">NPOPTKP</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
+                <input type="text" class="form-control" id="InputanTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
               </div>
             </div>
             <!-- <div class="form-group row row">
@@ -131,7 +131,7 @@
             <div class="form-group row">
               <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=5000000>
+                    <input type="text" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter gaji" value=5000000>
                 </div>
             </div>
             <!-- <div class="form-check">
@@ -204,10 +204,10 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "InputTidakPajak" : $('#InputTidakPajak').val(),
-                    "InputRumah" : $('#InputRumah').val(),
+                    "InputTidakPajak" : $('#InputanTidakPajak').val(),
+                    "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),
-                    "InputGaji" : $('#InputGaji').val(),
+                    "InputGaji" : $('#InputanGaji').val(),
                     "InputJangka" : $('#InputJangka').val(),
                   },
                   success: function(data)
@@ -234,7 +234,7 @@
                       $('#nilai').text("Cicilan per bulan: "+data.cicilan);
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
-                      $('#total').text("Biaya beli rumah "+data.total+" dalam "+data.years+"tahun");
+                      $('#total').text("Biaya beli rumah dan kelengkapannya "+data.total+" dalam "+data.years+"tahun");
 
                       var url = document.location.href+"/"+data.cicilan;
                       // document.location = url;

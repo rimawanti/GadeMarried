@@ -184,7 +184,7 @@ class SimulasiController extends Controller
         // $this->console_log("dana: ".$dana."proggram: ".$program."vaksin: ".$vaksin."saku: ".$saku."jemaah: ".$jemaah."oleh: ".$oleh."jangka: ".$jangka."gaji: ".$gaji); die();
 
         if($program==1){
-            $biaya = 115000000; 
+            $biaya = 3*$biaya; 
         }
         $total = $jemaah*($dana+$vaksin+$saku+$oleh+$biaya+($kenaikan*$jangka));
         $cicilan = $total/($jangka*12);

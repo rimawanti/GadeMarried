@@ -205,7 +205,38 @@ class SimulasiController extends Controller
     }
     public function hitungRumah(Request $request)
     {
+        $start = microtime(true);
+        $s = 0.085; /*suku bunga -> inflasi*/
+        $total = 0; $rekom=1;
 
+        $rumah = $this->removeComma($request->input('InputRumah'));
+        $tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
+        //$notaris = $this->removeComma($request->input('InputNotaris'));
+        $jangka= $request->input('InputJangka');
+        $gaji= $this->removeComma($request->input('InputGaji'));
+        
+        //rincian biaya notaris
+        $akta = 0.01*$rumah; //akta jual beli 1% dari harga jual
+        $baliknama = 0.01*$rumah; //biaya balik nama 1% dari harga jual
+        $sertif = 100000; //cek sertifikat
+        $bphtb = 0.05*($rumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
+        $notaris = $akta+$baliknama+$sertif+$bphtb;
+
+        $total = $notaris+($rumah+($rumah*($s*$jangka)));
+        $cicilan = $total/($jangka*12);
+
+        if($cicilan >= (0.3*$gaji)){
+            $rekom = 0;
+        }
+        //calculate query times
+        $time_elapsed_secs = microtime(true) - $start;
+        $time_elapsed_secs = number_format($time_elapsed_secs, 4, '.', '');
+
+        $total_ = number_format($total,2);
+        $cicilan_ = number_format($cicilan,2);
+
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom));
+        return $datas;
     }
 
     /**

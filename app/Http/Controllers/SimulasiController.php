@@ -222,9 +222,11 @@ class SimulasiController extends Controller
         $bphtb = 0.05*($rumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
         $notaris = $akta+$baliknama+$sertif+$bphtb;
 
-        $total = $notaris+($rumah+($rumah*($s*$jangka)));
+        //$total = $notaris+($rumah+($rumah*($s*$jangka)));
+        $biaya = $notaris+$rumah;
+        $total = $biaya * pow((1+$s),$jangka);
         $cicilan = $total/($jangka*12);
-
+        
         if($cicilan >= (0.3*$gaji)){
             $rekom = 0;
         }

@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>RUMAH</b></h1>
+                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>KENDARAAN</b></h1>
                   <!-- <a href="javascript:void(0);">Selengkapnya</a> -->
                 </div>
               </div>
@@ -36,28 +36,55 @@
                   <div class="form-group row row">
                     <label for="InputName" class="col-sm-2 col-form-label">Nama </label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" id="InputName" placeholder="Enter Nama Pasangan">
+                    	<input type="text" class="form-control" id="InputName" placeholder="Masukkan Nama Anda">
                     </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputJangka" class="col-sm-2 col-form-label" >Rencana xxxxxxxxxxxx (dalam tahun)</label>
+                    <label for="InputKendaraan" class="col-sm-2 col-form-label" >Tipe Kendaraan</label>
+                    <select id="InputKendaraan">
+                      <option value="mobil">Mobil</option>
+                      <option value="motor">Motor</option>
+                    </select>
                     <div class="col-sm-10">
-                   	<input type="number" class="form-control" id="InputJangka" name="InputJangka" placeholder="Dalam tahun" value=1>
+                   	<input type="text" class="form-control" id="InputKendaraan" name="InputKendaraan" placeholder="Pilih jenis" value=1>
+                	  </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputHarga" class="col-sm-2 col-form-label" >Harga OTR</label>
+                    <div class="col-sm-10">
+                   	<input type="text" class="form-control" id="InputHarga" name="InputHarga" placeholder="Dalam rupiah" value=1>
+                	  </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="InputBiayaSurat" class="col-sm-2 col-form-label">Biaya Surat Kendaraan</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="InputBiayaSurat" name="InputBiayaSurat" placeholder="Enter biaya" value=2000000>
                 	</div>
                   </div>
                   <div class="form-group row">
-                    <label for="InputGaji" class="col-sm-2 col-form-label">Penghasilan per bulan (total)</label>
+                    <label for="InputBiayaAsuransi" class="col-sm-2 col-form-label">Biaya Asuransi Kendaraan:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
+                    <input type="text" step="0.01" class="form-control" id="InputBiayaAsuransi" name="InputBiayaAsuransi" placeholder="Enter biaya Asuransi" value=10000000>
                 	</div>
                   </div>
-                  <!-- <div class="form-check">
+                  <div class="form-group row">
+                    <label for="InputAdministrasi" class="col-sm-2 col-form-label">Biaya Administrasi:</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="InputAdministrasi" name="InputAdministrasi" placeholder="Enter biaya Adminstrasi" value=12500000>
+                	</div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="PenghasilanPerbulan" class="col-sm-2 col-form-label">Penghasilan Perbulan (total):</label>
+                    <div class="col-sm-10">
+                    <input type="text" step="0.01" class="form-control" id="PenghasilanPerbulan" name="PenghasilanPerbulan" placeholder="Enter penghasilan perbulan" value=27000000>
+                	</div>
+                  </div>
+                    <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="Check1">
                     <label class="form-check-label" for="Check1">Check me out</label>
                   </div> -->
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">HITUNG</button> -->
                 </div>

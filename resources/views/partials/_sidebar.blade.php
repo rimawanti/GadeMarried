@@ -40,7 +40,7 @@
               <li class="nav-item">
                 <a href="{{url('/simulasi/nikah')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'nikah'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Nikah Nanti</p>
+                  <p>Menikah</p>
                 </a>
               </li>
               <!-- <li class="nav-item">

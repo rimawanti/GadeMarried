@@ -5,7 +5,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-       <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <img src="{{ asset('/img/pegadaian.png') }}" class="nav-link">
       </li>
       <li class="nav-item d-none d-sm-inline-block">
@@ -16,6 +16,6 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{url('/login')}}" class="nav-link">Sign Out</a>
-      </li>
+      </li> -->
     </ul>
   </nav>

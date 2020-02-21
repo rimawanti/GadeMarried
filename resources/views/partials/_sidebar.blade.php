@@ -1,11 +1,11 @@
  <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
+        <!-- <div class="image">
           <img src="{{ asset('dist/img/user4-128x128.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Rimawanti Fauzyah</a>
-        </div>
+        </div> -->
       </div>
 
       <!-- Sidebar Menu -->
@@ -40,7 +40,7 @@
               <li class="nav-item">
                 <a href="{{url('/simulasi/nikah')}}" class="{{ Request::segment(1) === 'simulasi' && Request::segment(2) === 'nikah'  ? "nav-link active" : "nav-link"}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Nikah Nanti</p>
+                  <p>Menikah</p>
                 </a>
               </li>
               <!-- <li class="nav-item">

@@ -41,42 +41,41 @@
                   </div>
                   <div class="form-group row row">
                     <label for="InputKendaraan" class="col-sm-2 col-form-label" >Tipe Kendaraan</label>
-                    <select id="InputKendaraan">
-                      <option value="mobil">Mobil</option>
-                      <option value="motor">Motor</option>
-                    </select>
-                    <div class="col-sm-10">
-                   	<input type="text" class="form-control" id="InputKendaraan" name="InputKendaraan" placeholder="Pilih jenis" value=1>
-                	  </div>
+                     <div class="col-sm-10">
+                        <select id="InputKendaraan" class="form-control">
+                          <option value="0">Mobil</option>
+                          <option value="1">Motor</option>
+                        </select>
+                     </div>
                   </div>
                   <div class="form-group row row">
                     <label for="InputHarga" class="col-sm-2 col-form-label" >Harga OTR</label>
                     <div class="col-sm-10">
-                   	<input type="text" class="form-control" id="InputHarga" name="InputHarga" placeholder="Dalam rupiah" value=1>
+                   	<input type="text" class="form-control" id="InputanHarga" name="InputHarga" placeholder="Dalam rupiah" value=1>
                 	  </div>
                   </div>
                   <div class="form-group row">
                     <label for="InputBiayaSurat" class="col-sm-2 col-form-label">Biaya Surat Kendaraan</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputBiayaSurat" name="InputBiayaSurat" placeholder="Enter biaya" value=2000000>
+                    <input type="text" step="0.01" class="form-control" id="InputanBiayaSurat" name="InputBiayaSurat" placeholder="Enter biaya" value=2000000>
                 	</div>
                   </div>
                   <div class="form-group row">
                     <label for="InputBiayaAsuransi" class="col-sm-2 col-form-label">Biaya Asuransi Kendaraan:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputBiayaAsuransi" name="InputBiayaAsuransi" placeholder="Enter biaya Asuransi" value=10000000>
+                    <input type="text" step="0.01" class="form-control" id="InputanBiayaAsuransi" name="InputBiayaAsuransi" placeholder="Enter biaya Asuransi" value=10000000>
                 	</div>
                   </div>
                   <div class="form-group row">
                     <label for="InputAdministrasi" class="col-sm-2 col-form-label">Biaya Administrasi:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputAdministrasi" name="InputAdministrasi" placeholder="Enter biaya Adminstrasi" value=12500000>
+                    <input type="text" step="0.01" class="form-control" id="InputanAdministrasi" name="InputAdministrasi" placeholder="Enter biaya Adminstrasi" value=12500000>
                 	</div>
                   </div>
                   <div class="form-group row">
                     <label for="PenghasilanPerbulan" class="col-sm-2 col-form-label">Penghasilan Perbulan (total):</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="PenghasilanPerbulan" name="PenghasilanPerbulan" placeholder="Enter penghasilan perbulan" value=27000000>
+                    <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter penghasilan perbulan" value=27000000>
                 	</div>
                   </div>
                     <!-- <div class="form-check">

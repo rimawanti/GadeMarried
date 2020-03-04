@@ -185,7 +185,8 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
-
+       var x = document.getElementById("InputLokasi").selectedIndex;
+       
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
          $.ajax({
@@ -193,7 +194,7 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "lokasi" : getIndex("InputLokasi"),
+                    "lokasi" : x,
                     //"InputTidakPajak" : $('#InputanTidakPajak').val(),
                     "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),
@@ -237,10 +238,7 @@
          }); 
        });
   });
-  function getIndex($opsi){
-    var x = document.getElementById($opsi).selectedIndex;
-    return x;
-  }
+
 </script>
 
 </html>

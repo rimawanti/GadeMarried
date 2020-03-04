@@ -209,7 +209,7 @@ class SimulasiController extends Controller
         $s = 0.085; /*suku bunga -> inflasi*/
         $total = 0; $rekom=1;
         $tidakpajak = 0;
-        $lokasi =0;
+        $lokasi = 0;
 
         $jangka= $request->input('InputJangka');
         $gaji= $this->removeComma($request->input('InputGaji'));

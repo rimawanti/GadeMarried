@@ -211,6 +211,8 @@ class SimulasiController extends Controller
         $tidakpajak = 0;
         $lokasi =0;
 
+        $jangka= $request->input('InputJangka');
+        $gaji= $this->removeComma($request->input('InputGaji'));
         $rumah = $this->removeComma($request->input('InputRumah'));
         $finalrumah = $rumah * pow((1+$s),$jangka);
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
@@ -223,9 +225,7 @@ class SimulasiController extends Controller
         
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         //$notaris = $this->removeComma($request->input('InputNotaris'));
-        $jangka= $request->input('InputJangka');
-        $gaji= $this->removeComma($request->input('InputGaji'));
-        
+       
         //rincian biaya notaris
         $akta = 0.01*$finalrumah; //akta jual beli 1% dari harga jual
         $baliknama = 0.01*$finalrumah; //biaya balik nama 1% dari harga jual

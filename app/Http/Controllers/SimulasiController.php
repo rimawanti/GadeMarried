@@ -208,9 +208,18 @@ class SimulasiController extends Controller
         $start = microtime(true);
         $s = 0.085; /*suku bunga -> inflasi*/
         $total = 0; $rekom=1;
+        $tidakpajak = 0;
 
         $rumah = $this->removeComma($request->input('InputRumah'));
-        $tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
+        //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
+        
+        if($lokasi == 0){
+            $tidakpajak = 800000000;
+        } else if($lokasi == 1){
+            $tidakpajak = 20000000;
+        }
+        
+        //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         //$notaris = $this->removeComma($request->input('InputNotaris'));
         $jangka= $request->input('InputJangka');
         $gaji= $this->removeComma($request->input('InputGaji'));

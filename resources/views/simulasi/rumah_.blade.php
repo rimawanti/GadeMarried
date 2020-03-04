@@ -44,16 +44,17 @@
                   {{  Form::text('InputName',null,array('class' => 'form-control','placeholder'=>'Masukkan nama')) }}
               </div>
             </div>
-            <!-- <div class="form-group row row">
-              <label for="PilihProvinsi" class="col-sm-2 col-form-label">Provinsi</label>
+            <div class="form-group row row">
+              <label for="PilihLokasi" class="col-sm-2 col-form-label">Lokasi</label>
               <div class="col-sm-10">
-                <select class="custom-select" id="InputProvinsi">
-                  <option selected>--Pilih Provinsi--</option>
-                  <option value="DKI Jakarta">DKI Jakarta</option>
-                  <option value="Jawa Barat">Jawa Barat</option>
+                <select class="custom-select" id="InputLokasi">
+                  <option selected>--Pilih Lokasi--</option>
+                  <option value="0">DKI Jakarta</option>
+                  <option value="1">Semarang</option>
+                  <!-- <option value="2">Bogor</option> -->
                 </select>
               </div>
-            </div> -->
+            </div>
             <!-- <div class="form-group row row">
               <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
               <div class="col-sm-10">
@@ -66,18 +67,6 @@
                   <option value="Jakarta Pusat">Jakarta Pusat</option>
                   <option value="Kepulauan Seribu">Kepulauan Seribu</option>
                 </select>
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputTanah" class="col-sm-2 col-form-label">Luas Tanah (meter persegi)</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputTanah" placeholder="Enter Luas Tanah">
-              </div>
-            </div>
-            <div class="form-group row row">
-              <label for="InputBangunan" class="col-sm-2 col-form-label">Luas Bangunan (meter persegi)</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputBangunan" placeholder="Enter Luas Bangunan">
               </div>
             </div> -->
             <div class="form-group row row">
@@ -204,7 +193,8 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "InputTidakPajak" : $('#InputanTidakPajak').val(),
+                    "lokasi" = $('#InputLokasi').children("option:selected").val();
+                    //"InputTidakPajak" : $('#InputanTidakPajak').val(),
                     "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),
                     "InputGaji" : $('#InputanGaji').val(),

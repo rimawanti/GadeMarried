@@ -48,7 +48,7 @@
               <label for="PilihLokasi" class="col-sm-2 col-form-label">Lokasi</label>
               <div class="col-sm-10">
                 <select class="custom-select" id="InputLokasi">
-                  <option selected>--Pilih Lokasi--</option>
+                  <option value="0">--Pilih Lokasi--</option>
                   <option value="1">DKI Jakarta</option>
                   <option value="2">Semarang</option>
                   <!-- <option value="3">Bogor</option> -->
@@ -185,7 +185,6 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
-       var x = document.getElementById("InputLokasi").selectedIndex;
 
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
@@ -194,7 +193,7 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "lokasi" : x,
+                    "lokasi" : getIndex("InputLokasi"),
                     //"InputTidakPajak" : $('#InputanTidakPajak').val(),
                     "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),
@@ -238,6 +237,10 @@
          }); 
        });
   });
+  function getIndex($opsi){
+    var x = document.getElementById($opsi).selectedIndex;
+    return x;
+  }
 </script>
 
 </html>

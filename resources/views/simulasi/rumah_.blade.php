@@ -194,7 +194,7 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "lokasi" = x,
+                    "lokasi" : x,
                     //"InputTidakPajak" : $('#InputanTidakPajak').val(),
                     "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),

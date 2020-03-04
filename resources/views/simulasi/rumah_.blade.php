@@ -185,6 +185,7 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
+       var x = document.getElementById("InputLokasi").selectedIndex;
 
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
@@ -193,7 +194,7 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "lokasi" = $('#InputLokasi').children("option:selected").val();
+                    "lokasi" = x,
                     //"InputTidakPajak" : $('#InputanTidakPajak').val(),
                     "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),

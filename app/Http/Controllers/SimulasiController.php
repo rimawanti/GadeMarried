@@ -209,13 +209,14 @@ class SimulasiController extends Controller
         $s = 0.085; /*suku bunga -> inflasi*/
         $total = 0; $rekom=1;
         $tidakpajak = 0;
+        $lokasi =0;
 
         $rumah = $this->removeComma($request->input('InputRumah'));
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         
-        if($lokasi == 0){
+        if($lokasi == 1){
             $tidakpajak = 80000000;
-        } else if($lokasi == 1){
+        } else if($lokasi == 2){
             $tidakpajak = 20000000;
         }
         

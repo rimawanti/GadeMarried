@@ -49,9 +49,9 @@
               <div class="col-sm-10">
                 <select class="custom-select" id="InputLokasi">
                   <option selected>--Pilih Lokasi--</option>
-                  <option value="0">DKI Jakarta</option>
-                  <option value="1">Semarang</option>
-                  <!-- <option value="2">Bogor</option> -->
+                  <option value="1">DKI Jakarta</option>
+                  <option value="2">Semarang</option>
+                  <!-- <option value="3">Bogor</option> -->
                 </select>
               </div>
             </div>

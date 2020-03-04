@@ -226,6 +226,7 @@
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
                       $('#total').text("Biaya beli rumah dan kelengkapannya "+data.total+" dalam "+data.years+"tahun");
+                      alert(data.lokasi);
 
                       var url = document.location.href+"/"+data.cicilan;
                       // document.location = url;

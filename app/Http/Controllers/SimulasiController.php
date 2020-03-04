@@ -248,7 +248,7 @@ class SimulasiController extends Controller
         $total_ = number_format($total,2);
         $cicilan_ = number_format($cicilan,2);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'lokasi'=>$lokasi));
         return $datas;
     }
 

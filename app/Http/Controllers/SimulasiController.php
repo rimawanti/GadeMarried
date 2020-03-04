@@ -212,6 +212,7 @@ class SimulasiController extends Controller
         $lokasi =0;
 
         $rumah = $this->removeComma($request->input('InputRumah'));
+        $finalrumah = $rumah * pow((1+$s),$jangka);
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         
         if($lokasi == 1){
@@ -226,15 +227,15 @@ class SimulasiController extends Controller
         $gaji= $this->removeComma($request->input('InputGaji'));
         
         //rincian biaya notaris
-        $akta = 0.01*$rumah; //akta jual beli 1% dari harga jual
-        $baliknama = 0.01*$rumah; //biaya balik nama 1% dari harga jual
+        $akta = 0.01*$finalrumah; //akta jual beli 1% dari harga jual
+        $baliknama = 0.01*$finalrumah; //biaya balik nama 1% dari harga jual
         $sertif = 100000; //cek sertifikat
-        $bphtb = 0.05*($rumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
+        $bphtb = 0.05*($finalrumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
         $notaris = $akta+$baliknama+$sertif+$bphtb;
 
         //$total = $notaris+($rumah+($rumah*($s*$jangka)));
-        $biaya = $notaris+$rumah;
-        $total = $biaya * pow((1+$s),$jangka);
+        $total = $notaris+$finalrumah;
+        //$total = $biaya * pow((1+$s),$jangka);
         $cicilan = $total/($jangka*12);
         
         if($cicilan >= (0.3*$gaji)){

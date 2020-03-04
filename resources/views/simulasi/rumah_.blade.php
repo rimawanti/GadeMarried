@@ -75,12 +75,12 @@
                 <input type="text" class="form-control" id="InputanRumah" placeholder="Enter Harga Jual Rumah" value="300000000">
               </div>
             </div>
-            <div class="form-group row row">
+            <!-- <div class="form-group row row">
               <label for="InputTidakPajak" class="col-sm-2 col-form-label">NPOPTKP</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputanTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
               </div>
-            </div>
+            </div> -->
             <!-- <div class="form-group row row">
               <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
               <div class="col-sm-10">

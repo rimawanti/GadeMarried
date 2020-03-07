@@ -51,6 +51,7 @@
                   <option value="0">--Pilih Lokasi--</option>
                   <option value="1">DKI Jakarta</option>
                   <option value="2">Semarang</option>
+                  <option value="3">Bantul</option>
                 </select>
               </div>
             </div>

@@ -221,7 +221,9 @@ class SimulasiController extends Controller
             $tidakpajak = 80000000;
         } else if($lokasi == 2){
             $tidakpajak = 60000000;
-        }
+        } else if ($lokasi == 3){
+            $tidakpajak = 60000000;
+        } 
         
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         //$notaris = $this->removeComma($request->input('InputNotaris'));

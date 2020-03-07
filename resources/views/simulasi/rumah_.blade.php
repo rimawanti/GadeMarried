@@ -224,7 +224,7 @@
                       $('#nilai').text("Cicilan per bulan: "+data.cicilan);
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
-                      $('#total').text("Biaya beli rumah dan kelengkapannya "+data.total+" dalam "+data.years+"tahun");
+                      $('#total').text("Biaya beli rumah termasuk Biaya Notaris (Cek Sertifikat, Akta Jual Beli, Biaya Balik Nama, BPHTB), NPOPTKP adalah "+data.total+" dalam "+data.years+"tahun");
                       //alert(data.lokasi);
 
                       var url = document.location.href+"/"+data.cicilan;

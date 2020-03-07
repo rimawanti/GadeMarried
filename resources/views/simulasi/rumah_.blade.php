@@ -51,66 +51,15 @@
                   <option value="0">--Pilih Lokasi--</option>
                   <option value="1">DKI Jakarta</option>
                   <option value="2">Semarang</option>
-                  <!-- <option value="3">Bogor</option> -->
                 </select>
               </div>
             </div>
-            <!-- <div class="form-group row row">
-              <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
-              <div class="col-sm-10">
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option selected>--Pilih Kota/Kabupaten--</option>
-                  <option value="Jakarta Utara">Jakarta Utara</option>
-                  <option value="Jakarta Timur">Jakarta Timur</option>
-                  <option value="Jakarta Selatan">Jakarta Selatan</option>
-                  <option value="Jakarta Barat">Jakarta Barat</option>
-                  <option value="Jakarta Pusat">Jakarta Pusat</option>
-                  <option value="Kepulauan Seribu">Kepulauan Seribu</option>
-                </select>
-              </div>
-            </div> -->
             <div class="form-group row row">
               <label for="InputRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputanRumah" placeholder="Enter Harga Jual Rumah" value="300000000">
               </div>
             </div>
-            <!-- <div class="form-group row row">
-              <label for="InputTidakPajak" class="col-sm-2 col-form-label">NPOPTKP</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputanTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputNJOP" placeholder="Enter Harga Sesuai NJOP">
-              </div>
-            </div>
-            <div class="form-group row row">
-              <label for="InputNJOPTKP" class="col-sm-2 col-form-label">NJOPTKP/NPTKP</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputNJOPTKP" placeholder="Enter NJOPTKP/NPTKP">
-              </div>
-            </div>
-            <div class="form-group row row">
-              <label for="InputPPnBM" class="col-sm-2 col-form-label">Pajak Pembelian Barang Mewah</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pembelian Barang Mewah">
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputAsuransi" class="col-sm-2 col-form-label">Asuransi Kebakaran</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputAsuransi" placeholder="Enter Asuransi Kebakaran">
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputNotaris" placeholder="Enter Biaya Notaris/PPAT">
-              </div>
-            </div> -->
             <div class="form-group row row">
               <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
               <div class="col-sm-10">

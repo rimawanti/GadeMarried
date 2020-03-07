@@ -220,7 +220,7 @@ class SimulasiController extends Controller
         if($lokasi == 1){
             $tidakpajak = 80000000;
         } else if($lokasi == 2){
-            $tidakpajak = 20000000;
+            $tidakpajak = 60000000;
         }
         
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));

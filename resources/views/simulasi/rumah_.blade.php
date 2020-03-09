@@ -44,84 +44,23 @@
                   {{  Form::text('InputName',null,array('class' => 'form-control','placeholder'=>'Masukkan nama')) }}
               </div>
             </div>
-            <!-- <div class="form-group row row">
-              <label for="PilihProvinsi" class="col-sm-2 col-form-label">Provinsi</label>
+            <div class="form-group row row">
+              <label for="PilihLokasi" class="col-sm-2 col-form-label">Lokasi</label>
               <div class="col-sm-10">
-                <select class="custom-select" id="InputProvinsi">
-                  <option selected>--Pilih Provinsi--</option>
-                  <option value="DKI Jakarta">DKI Jakarta</option>
-                  <option value="Jawa Barat">Jawa Barat</option>
+                <select class="custom-select" id="InputLokasi">
+                  <option value="0">--Pilih Lokasi--</option>
+                  <option value="1">DKI Jakarta</option>
+                  <option value="2">Semarang</option>
+                  <option value="3">Bantul</option>
                 </select>
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="PilihKota" class="col-sm-2 col-form-label">Kota/Kabupaten</label>
-              <div class="col-sm-10">
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option selected>--Pilih Kota/Kabupaten--</option>
-                  <option value="Jakarta Utara">Jakarta Utara</option>
-                  <option value="Jakarta Timur">Jakarta Timur</option>
-                  <option value="Jakarta Selatan">Jakarta Selatan</option>
-                  <option value="Jakarta Barat">Jakarta Barat</option>
-                  <option value="Jakarta Pusat">Jakarta Pusat</option>
-                  <option value="Kepulauan Seribu">Kepulauan Seribu</option>
-                </select>
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputTanah" class="col-sm-2 col-form-label">Luas Tanah (meter persegi)</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputTanah" placeholder="Enter Luas Tanah">
               </div>
             </div>
-            <div class="form-group row row">
-              <label for="InputBangunan" class="col-sm-2 col-form-label">Luas Bangunan (meter persegi)</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputBangunan" placeholder="Enter Luas Bangunan">
-              </div>
-            </div> -->
             <div class="form-group row row">
               <label for="InputRumah" class="col-sm-2 col-form-label">Harga Jual Rumah </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="InputanRumah" placeholder="Enter Harga Jual Rumah" value="300000000">
               </div>
             </div>
-            <div class="form-group row row">
-              <label for="InputTidakPajak" class="col-sm-2 col-form-label">NPOPTKP</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputanTidakPajak" placeholder="Enter Nilai Perolehan Objek Pajak Tidak Kena Pajak" value="80000000">
-              </div>
-            </div>
-            <!-- <div class="form-group row row">
-              <label for="InputNJOP" class="col-sm-2 col-form-label">Harga Sesuai NJOP</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputNJOP" placeholder="Enter Harga Sesuai NJOP">
-              </div>
-            </div>
-            <div class="form-group row row">
-              <label for="InputNJOPTKP" class="col-sm-2 col-form-label">NJOPTKP/NPTKP</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputNJOPTKP" placeholder="Enter NJOPTKP/NPTKP">
-              </div>
-            </div>
-            <div class="form-group row row">
-              <label for="InputPPnBM" class="col-sm-2 col-form-label">Pajak Pembelian Barang Mewah</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputPPnBM" placeholder="Enter Pajak Pembelian Barang Mewah">
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputAsuransi" class="col-sm-2 col-form-label">Asuransi Kebakaran</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputAsuransi" placeholder="Enter Asuransi Kebakaran">
-              </div>
-            </div> -->
-            <!-- <div class="form-group row row">
-              <label for="InputNotaris" class="col-sm-2 col-form-label">Biaya Notaris/PPAT</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="InputNotaris" placeholder="Enter Biaya Notaris/PPAT">
-              </div>
-            </div> -->
             <div class="form-group row row">
               <label for="InputJangka" class="col-sm-2 col-form-label">Rencana Pembelian Rumah (dalam tahun)</label>
               <div class="col-sm-10">
@@ -204,7 +143,8 @@
                   method: 'POST',
                   data: { 
                     "_token" : CSRF_TOKEN,
-                    "InputTidakPajak" : $('#InputanTidakPajak').val(),
+                    "lokasi" : getIndex('InputLokasi'),
+                    //"InputTidakPajak" : $('#InputanTidakPajak').val(),
                     "InputRumah" : $('#InputanRumah').val(),
                     "InputTenor" : $('#InputTenor').val(),
                     "InputGaji" : $('#InputanGaji').val(),
@@ -234,7 +174,8 @@
                       $('#nilai').text("Cicilan per bulan: "+data.cicilan);
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
-                      $('#total').text("Biaya beli rumah dan kelengkapannya "+data.total+" dalam "+data.years+"tahun");
+                      $('#total').text("Biaya beli rumah termasuk Biaya Notaris (Cek Sertifikat, Akta Jual Beli, Biaya Balik Nama, BPHTB), NPOPTKP adalah "+data.total+" dalam "+data.years+"tahun");
+                      //alert(data.lokasi);
 
                       var url = document.location.href+"/"+data.cicilan;
                       // document.location = url;
@@ -246,6 +187,10 @@
          }); 
        });
   });
+  function getIndex($opsi){
+    var x = document.getElementById($opsi).selectedIndex;
+    return x;
+  }
 </script>
 
 </html>

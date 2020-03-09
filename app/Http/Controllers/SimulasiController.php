@@ -208,23 +208,36 @@ class SimulasiController extends Controller
         $start = microtime(true);
         $s = 0.085; /*suku bunga -> inflasi*/
         $total = 0; $rekom=1;
-
-        $rumah = $this->removeComma($request->input('InputRumah'));
-        $tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
-        //$notaris = $this->removeComma($request->input('InputNotaris'));
+        $tidakpajak = 0;
+        
+        $lokasi = $request->input('lokasi');
         $jangka= $request->input('InputJangka');
         $gaji= $this->removeComma($request->input('InputGaji'));
+        $rumah = $this->removeComma($request->input('InputRumah'));
+        $finalrumah = $rumah * pow((1+$s),$jangka);
+        //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         
+        if($lokasi == 1){
+            $tidakpajak = 80000000;
+        } else if($lokasi == 2){
+            $tidakpajak = 60000000;
+        } else if ($lokasi == 3){
+            $tidakpajak = 60000000;
+        } 
+        
+        //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
+        //$notaris = $this->removeComma($request->input('InputNotaris'));
+       
         //rincian biaya notaris
-        $akta = 0.01*$rumah; //akta jual beli 1% dari harga jual
-        $baliknama = 0.01*$rumah; //biaya balik nama 1% dari harga jual
+        $akta = 0.01*$finalrumah; //akta jual beli 1% dari harga jual
+        $baliknama = 0.01*$finalrumah; //biaya balik nama 1% dari harga jual
         $sertif = 100000; //cek sertifikat
-        $bphtb = 0.05*($rumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
+        $bphtb = 0.05*($finalrumah-$tidakpajak); //bea perolehan hak atas tanah dan bangunan
         $notaris = $akta+$baliknama+$sertif+$bphtb;
 
         //$total = $notaris+($rumah+($rumah*($s*$jangka)));
-        $biaya = $notaris+$rumah;
-        $total = $biaya * pow((1+$s),$jangka);
+        $total = $notaris+$finalrumah;
+        //$total = $biaya * pow((1+$s),$jangka);
         $cicilan = $total/($jangka*12);
         
         if($cicilan >= (0.3*$gaji)){
@@ -237,7 +250,7 @@ class SimulasiController extends Controller
         $total_ = number_format($total,2);
         $cicilan_ = number_format($cicilan,2);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'lokasi'=>$lokasi));
         return $datas;
     }
     public function hitungKendaraan(Request $request){

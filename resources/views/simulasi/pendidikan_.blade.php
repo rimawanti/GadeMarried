@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>PENDIDIKAN ANAKkkkkk</b></h1>
+                  <h1 class="card-title">LAKUKAN SIMULASI PROGRAM <b>PENDIDIKAN ANAK</b></h1>
                   <!-- <a href="javascript:void(0);">Selengkapnya</a> -->
                 </div>
               </div>

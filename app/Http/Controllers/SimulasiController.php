@@ -240,6 +240,50 @@ class SimulasiController extends Controller
         $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka));
         return $datas;
     }
+    public function hitungKendaraan(Request $request){
+        $start = microtime(true);
+        $i = 0.03; /*suku bunga -> inflasi*/
+        $total = 0; $rekom=1; $biaya =0;
+        $asuransi = 0.02;
+        
+        $harga = $this->removeComma($request->input('InputHarga'));
+        $isAsuransi = $request->input('InputAsuransi');
+        //$admin = $this->removeComma($request->input('InputAdmin'));
+        $tipe   =  $request->input('InputTipe');
+        $jangka = $request->input('InputJangka');
+        $gaji   = $this->removeComma($request->input('InputGaji'));
+
+        if($tipe == 0){ //jika motor
+            $biaya = ($harga * pow((1+$i),$jangka)) + 500000;
+        }
+        else{ //jika mobil
+            $biaya = ($harga * pow((1+$i),$jangka)) + 1000000;
+        }
+        
+        $total = $biaya;
+
+        if($isAsuransi == 1){
+                $biaya = $biaya + ($asuransi*$biaya);
+        }
+        
+        //$this->console_log("biaya: ".$biaya."total: ".$total); die();
+
+        $cicilan = $biaya/($jangka*12);
+        
+        if($cicilan >= (0.3*$gaji)){
+            $rekom = 0;
+        }
+        //calculate query times
+        $time_elapsed_secs = microtime(true) - $start;
+        $time_elapsed_secs = number_format($time_elapsed_secs, 4, '.', '');
+
+        $total_ = number_format($biaya,2);
+        $cicilan_ = number_format($cicilan,2);
+
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka));
+        return $datas;
+
+    }
 
     /**
      * Display the specified resource.

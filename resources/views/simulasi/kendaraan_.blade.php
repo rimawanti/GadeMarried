@@ -40,42 +40,48 @@
                     </div>
                   </div>
                   <div class="form-group row row">
+                            <label for="InputJangka" class="col-sm-2 col-form-label">Rencana beli kendaraan (dalam tahun)</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="InputJangka" name="InputJangka" value="1">
+                            </div>
+                        </div>
+                  <div class="form-group row row">
                     <label for="InputKendaraan" class="col-sm-2 col-form-label" >Tipe Kendaraan</label>
                      <div class="col-sm-10">
-                        <select id="InputKendaraan" class="form-control">
-                          <option value="0">Mobil</option>
-                          <option value="1">Motor</option>
-                        </select>
+                        {{ Form::radio('tipe','0',true,array('id' => 'InputKendaraan','class'=>'')) }} Motor
+                        {{ Form::radio('tipe','1',false,array('id' => 'InputKendaraan','class'=>'')) }} Mobil 
+
                      </div>
                   </div>
                   <div class="form-group row row">
-                    <label for="InputHarga" class="col-sm-2 col-form-label" >Harga OTR</label>
+                    <label for="InputHarga" class="col-sm-2 col-form-label" >Harga OTR (Off The Road)</label>
                     <div class="col-sm-10">
-                   	<input type="text" class="form-control" id="InputanHarga" name="InputHarga" placeholder="Dalam rupiah" value=1>
+                   	<input type="text" class="form-control" id="InputanHarga" name="InputHarga" placeholder="Harga mobil saja" value=20000000>
                 	  </div>
                   </div>
-                  <div class="form-group row">
+                  <!-- <div class="form-group row">
                     <label for="InputBiayaSurat" class="col-sm-2 col-form-label">Biaya Surat Kendaraan</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaSurat" name="InputBiayaSurat" placeholder="Enter biaya" value=2000000>
-                	</div>
-                  </div>
+                      <input type="text" step="0.01" class="form-control" id="InputanBiayaSurat" name="InputBiayaSurat" placeholder="Enter biaya" value=2000000>
+                	  </div>
+                  </div> -->
                   <div class="form-group row">
-                    <label for="InputBiayaAsuransi" class="col-sm-2 col-form-label">Biaya Asuransi Kendaraan:</label>
+                    <label for="InputBiayaAsuransi" class="col-sm-2 col-form-label">Memakai Asuransi Kendaraan:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanBiayaAsuransi" name="InputBiayaAsuransi" placeholder="Enter biaya Asuransi" value=10000000>
-                	</div>
+                      {{ Form::radio('asuransi','1',false,array('id' => 'InputAsuransi','class'=>'')) }} Yes
+                      {{ Form::radio('asuransi','0',true,array('id' => 'InputAsuransi','class'=>'')) }} No
+                	 </div>
                   </div>
-                  <div class="form-group row">
+                 <!--  <div class="form-group row">
                     <label for="InputAdministrasi" class="col-sm-2 col-form-label">Biaya Administrasi:</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanAdministrasi" name="InputAdministrasi" placeholder="Enter biaya Adminstrasi" value=12500000>
+                    <input type="text" step="0.01" class="form-control" id="InputanAdmin" name="InputAdministrasi" placeholder="Enter biaya Adminstrasi" value=500000>
                 	</div>
-                  </div>
+                  </div> -->
                   <div class="form-group row">
                     <label for="PenghasilanPerbulan" class="col-sm-2 col-form-label">Penghasilan Perbulan (total):</label>
                     <div class="col-sm-10">
-                    <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter penghasilan perbulan" value=27000000>
+                    <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter penghasilan perbulan" value=3000000>
                 	</div>
                   </div>
                     <!-- <div class="form-check">
@@ -135,4 +141,63 @@
             </div>
  </div>
 @endsection
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+
+</script>
+<script type="text/javascript" >
+  $(function(){
+       var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+       var isEmpty = false;
+
+       $('#btn-todo').on("click",function(e) {
+        e.preventDefault();
+         $.ajax({
+                  url: '{{url("simulasi/kendaraan/hitung")}}',
+                  method: 'POST',
+                  data: { 
+                    "_token" : CSRF_TOKEN,
+                    "InputHarga" : $('#InputanHarga').val(),
+                    "InputAdmin" : $('#InputanAdmin').val(),
+                    "InputAsuransi" : $("input[name='asuransi']:checked").val(),
+                    "InputTipe" : $("input[name='tipe']:checked").val(),
+                    "InputGaji" : $('#InputanGaji').val(),
+                    "InputJangka" : $('#InputJangka').val(),
+                  },
+                  success: function(data)
+                  {
+                      var data= $.parseJSON(data);
+
+                      document.getElementById("hitungulang").style.display = "block"; 
+                      document.getElementById("rekom").style.display = "block";
+                       $("#btn-todo").attr("disabled", true); 
+
+                      if(data.rekom == 0){
+                         $('#rekom').val("Belum direkomendasikan ");
+                         $('#rekom').css({'class': 'btn btn-danger btn-block'});
+                         $('#ket').text("Pilih jangka waktu yang lebih panjang sesuai penghasilan anda");
+                         $('#ket').css({'color': '#e31a0b'});
+                      }
+                      if(data.rekom == 1){
+                         $('#rekom').val("Direkomendasikan");
+                         $('#ket').text("Silahkan daftar produk sekarang!!");
+                         $('#ket').css({'color': 'blue'});
+                      }
+                      $('#nama_pasangan').text("Hasil Simulasi "+ $('#InputName').val());
+
+                      $('#nilai').text("Cicilan per bulan: "+data.cicilan);
+                      $('#nilai').css({'color':'#e31a0b'});
+                      $('#query_time').text("Calculating tooks "+data.time+" seconds");
+                      $('#total').text("Biaya kendaraan dan kelengkapannya menjadi "+data.total+" dalam "+data.years+"tahun");
+
+                      var url = document.location.href+"/"+data.cicilan;
+                      // document.location = url;
+                      window.history.replaceState(null, null, url);
+                  },
+                  error: function (response) {
+                    alert("error! "+response); 
+                }
+         }); 
+       });
+  });
+</script>
 </html>

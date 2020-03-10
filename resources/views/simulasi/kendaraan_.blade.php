@@ -189,7 +189,7 @@
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
                       $('#total').text("Biaya kendaraan dan kelengkapannya menjadi "+data.total+" dalam "+data.years+"tahun");
 
-                      var url = document.location.href+"/"+data.cicilan;
+                      var url = document.location.href+"?tab=finished";//+data.cicilan;
                       // document.location = url;
                       window.history.replaceState(null, null, url);
                   },

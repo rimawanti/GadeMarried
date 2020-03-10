@@ -177,7 +177,7 @@
                       $('#total').text("Biaya beli rumah termasuk Biaya Notaris (Cek Sertifikat, Akta Jual Beli, Biaya Balik Nama, BPHTB), NPOPTKP adalah "+data.total+" dalam "+data.years+"tahun");
                       //alert(data.lokasi);
 
-                      var url = document.location.href+"/"+data.cicilan;
+                      var url = document.location.href+"?tab=finished";//+data.cicilan;
                       // document.location = url;
                       window.history.replaceState(null, null, url);
                   },

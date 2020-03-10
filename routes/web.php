@@ -45,22 +45,37 @@ Route::get('/profile/create', function () {
 Route::get('/simulasi/nikah', function () {
     return view('simulasi.index_');
 });
-Route::get('/simulasi/nikah/{nilai}', function () {
+Route::get('/simulasi/nikah/cif={cif}', function () {
     return view('simulasi.index_');
 });
+// Route::get('/simulasi/nikah/{nilai}', function () {
+//     return view('simulasi.index_');
+// });
 Route::get('/simulasi/travel', function () {
     return view('simulasi.travel');
 });
 Route::get('/simulasi/haji_umroh', function () {
     return view('simulasi.haji_');
 });
+Route::get('/simulasi/haji/cif={cif}', function () {
+    return view('simulasi.haji_');
+});
 Route::get('/simulasi/pendidikan', function () {
+    return view('simulasi.pendidikan_');
+});
+Route::get('/simulasi/pendidikan/cif={cif}', function () {
     return view('simulasi.pendidikan_');
 });
 Route::get('/simulasi/rumah', function () {
     return view('simulasi.rumah_');
 });
+Route::get('/simulasi/rumah/cif={cif}', function () {
+    return view('simulasi.rumah_');
+});
 Route::get('/simulasi/kendaraan', function () {
+    return view('simulasi.kendaraan_');
+});
+Route::get('/simulasi/kendaraan/cif={cif}', function () {
     return view('simulasi.kendaraan_');
 });
 // Route::get('/simulasi/pinjam', function () {

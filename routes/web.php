@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('coba', ['as' => 'coba.guzzle','uses' => 'SimulasiController@index']);
+
 /* ROUTING AUTH */
 Route::get('/login', function () {
     return view('auth.login');

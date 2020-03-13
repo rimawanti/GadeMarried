@@ -45,6 +45,12 @@
                             </div>
                         </div>
                         <div class="form-group row row">
+                            <label for="InputJangka" class="col-sm-2 col-form-label">Target</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="InputTarget" name="InputTarget" value="2020-01-31">
+                            </div>
+                        </div>
+                        <div class="form-group row row">
                             <label for="InputJangka" class="col-sm-2 col-form-label">Rencana ibadah haji (dalam tahun)</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" id="InputJangka" name="InputJangka" value="1">
@@ -158,7 +164,9 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
-
+       //var url = document.location.href
+       //var c = url.searchParams.get("cif");
+       var c = new URLSearchParams(window.location.search).get("cif");
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
          $.ajax({
@@ -175,6 +183,8 @@
                     "InputGaji" : $('#InputanGaji').val(),
                     "InputDana" : $('#InputanDana').val(),
                     "InputJangka" : $('#InputJangka').val(),
+                    "InputTarget" : $('#InputTarget').val(),
+                    "InputCIF" : c,
                   },
                   success: function(data)
                   {
@@ -202,7 +212,7 @@
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
                       $('#total').text("Biaya haji dan kelengkapannya menjadi "+data.total+" dalam "+data.years+"tahun");
 
-                      var url = document.location.href+"?tab=finished";//+data.cicilan;
+                      var url = document.location.href+"&tab=finished";//+data.cicilan;
                       // document.location = url;
                       window.history.replaceState(null, null, url);
                   },

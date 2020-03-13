@@ -184,17 +184,23 @@ class SimulasiController extends Controller
     {
         $start = microtime(true);
         $biaya = 35000000; $kenaikan = 5000000;
-        $total = 0; $rekom=1;
+        $total = 0; $rekom=1; $cif = 1234567889;
         $dana = $this->removeComma($request->input('InputDana'));
         $program = $request->input('InputProgram');
         $vaksin = $this->removeComma($request->input('InputVaksin'));
         $saku  = $this->removeComma($request->input('InputSaku'));
         $jemaah = $request->input('InputJamaah');
         $oleh = $this->removeComma($request->input('InputOleh'));
-        $jangka= $request->input('InputJangka');
+        $jangka= $request->input('InputJangka'); //date_format($jangka,"Y-m-d");
         $gaji= $this->removeComma($request->input('InputGaji'));
+        $target = $request->input('InputTarget');
+        $cif = $request->input('InputCIF');
+        $array = array();
+        $code = 500;
 
         // $this->console_log("dana: ".$dana."proggram: ".$program."vaksin: ".$vaksin."saku: ".$saku."jemaah: ".$jemaah."oleh: ".$oleh."jangka: ".$jangka."gaji: ".$gaji); die();
+
+        $dateMinusOneYear = date("Y-m-d", strtotime("-1 year", strtotime($jangka)));
 
         if($program==1){
             $biaya = 3*$biaya; 
@@ -212,7 +218,16 @@ class SimulasiController extends Controller
         $total_ = number_format($total,2);
         $cicilan_ = number_format($cicilan,2);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka));
+        $array[0] = 'CA001'; //kategori
+        $array[1] = $total; //total
+        $array[2] = $cicilan; //cicilan
+        $array[3] = $cif; //cif
+        $array[4] = $target; //target
+
+        $code = $this->sendtoDreamBox($array);
+
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'success send'=>$code,'target'=>$target,'cif'=>$cif));
+
         return $datas;
 
     }
@@ -362,12 +377,47 @@ class SimulasiController extends Controller
         //
     }
     function console_log($output, $with_script_tags = true) {
-    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
-');';
-    if ($with_script_tags) {
-        $js_code = '<script>' . $js_code . '</script>';
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG).');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
     }
-    echo $js_code;
-}
+
+    function sendtoDreamBox($arr){
+        $cat = $arr[0];
+        $total = $arr[1];
+        $cicilan = $arr[2];
+        $cif = $arr[3];
+        $target = $arr[4];
+
+        $client = new \GuzzleHttp\Client();
+        //$response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+
+        $url = "http://mydreambox.herokuapp.com/dreambox/integration";
+   
+        $myBody['cif'] = $cif;
+        $myBody['id_kategori'] = $cat;
+        $myBody['dana'] = $total;
+        $myBody['target'] = $target;
+        $myBody['tabungan_per_bulan'] = $cicilan;
+
+        $data = json_encode($myBody);
+
+
+        //$request = $client->post($url,  ['body'=>$myBody]);
+        $request = $client->post($url, ['body'=>$data]);
+     
+
+        //echo 'cif: '.$cif;      
+        return $request->getStatusCode(); 
+        //echo $request->getBody(); 
+
+        //die();
+        //echo $response->getStatusCode(); // 200
+        //echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
+        //echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
+
+    }
 
 }

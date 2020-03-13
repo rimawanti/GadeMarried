@@ -45,6 +45,12 @@
                 	</div>
                   </div>
                   <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Pilih target</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" id="InputTarget" name="InputTarget" placeholder="Dalam tahun" value="2020-01-31">
+                  </div>
+                  </div>
+                  <div class="form-group row row">
                     <label for="InputPra" class="col-sm-2 col-form-label">Dana pra wedding</label>
                     <div class="col-sm-10">
                     <input type="text"  class="form-control" id="InputanPra" name="InputPra" placeholder="Enter dana pernikahan" value=1000000>
@@ -163,6 +169,8 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
+       var c = new URLSearchParams(window.location.search).get("cif");
+
 
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
@@ -181,6 +189,8 @@
                     "souvenir" : $('#InputanSouvenir').val(),
                     "undangan" : $('#InputUndangan').val(),
                     "jangka" : $('#InputJangka').val(),
+                    "InputTarget" : $('#InputTarget').val(),
+                    "InputCIF" : c,
 
                   },
                   success: function(data)
@@ -209,7 +219,7 @@
                       $('#query_time').text("Calculating tooks "+data.time+" seconds");
                       $('#total').text("Biaya pernikahan diprediksikan menjadi "+data.total);
 
-                      var url = document.location.href+"?tab=finished";//+data.cicilan;
+                      var url = document.location.href+"&tab=finished";//+data.cicilan;
                       // document.location = url;
                       window.history.replaceState(null, null, url);
                   }

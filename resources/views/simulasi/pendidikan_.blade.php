@@ -51,6 +51,12 @@
                     <input type="text" step="0.01" class="form-control" id="InputanGaji" name="InputGaji" placeholder="Enter gaji" value=2000000>
                   </div>
                   </div>
+                  <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Pilih target</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" id="InputTarget" name="InputTarget" placeholder="Dalam tahun" value="2020-01-31">
+                  </div>
+                  </div>
                   <!-- <div class="form-group row">
                     <label for="InputPAUD" class="col-sm-2 col-form-label">Biaya Sekolah PAUD saat ini:</label>
                     <div class="col-sm-10">
@@ -157,6 +163,8 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
+       var c = new URLSearchParams(window.location.search).get("cif");
+       
 
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
@@ -173,6 +181,8 @@
                     "InputTenor" : $('#InputTenor').val(),
                     "InputUsia" : $('#InputUsia').val(),
                     "InputGaji" : $('#InputGaji').val(),
+                    "InputTarget" : $('#InputTarget').val(),
+                    "InputCIF" : c,
                   },
                   success: function(data)
                   {

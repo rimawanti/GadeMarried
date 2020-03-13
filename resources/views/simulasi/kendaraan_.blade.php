@@ -40,11 +40,17 @@
                     </div>
                   </div>
                   <div class="form-group row row">
-                            <label for="InputJangka" class="col-sm-2 col-form-label">Rencana beli kendaraan (dalam tahun)</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="InputJangka" name="InputJangka" value="1">
-                            </div>
-                        </div>
+                      <label for="InputJangka" class="col-sm-2 col-form-label">Rencana beli kendaraan (dalam tahun)</label>
+                      <div class="col-sm-10">
+                        <input type="number" class="form-control" id="InputJangka" name="InputJangka" value="1">
+                      </div>
+                  </div>
+                  <div class="form-group row row">
+                    <label for="InputJangka" class="col-sm-2 col-form-label" >Pilih target</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" id="InputTarget" name="InputTarget" placeholder="Dalam tahun" value="2020-01-31">
+                  </div>
+                  </div>
                   <div class="form-group row row">
                     <label for="InputKendaraan" class="col-sm-2 col-form-label" >Tipe Kendaraan</label>
                      <div class="col-sm-10">
@@ -148,6 +154,8 @@
   $(function(){
        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
        var isEmpty = false;
+       var c = new URLSearchParams(window.location.search).get("cif");
+
 
        $('#btn-todo').on("click",function(e) {
         e.preventDefault();
@@ -162,6 +170,8 @@
                     "InputTipe" : $("input[name='tipe']:checked").val(),
                     "InputGaji" : $('#InputanGaji').val(),
                     "InputJangka" : $('#InputJangka').val(),
+                    "InputTarget" : $('#InputTarget').val(),
+                    "InputCIF" : c,
                   },
                   success: function(data)
                   {

@@ -81,7 +81,7 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $this->sendtoDreamBox($array);
+        $code=$this->sendtoDreamBox($array);
 
         //calculate query times
         $time_elapsed_secs = microtime(true) - $start;
@@ -200,7 +200,7 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $this->sendtoDreamBox($array);
+        $code = $this->sendtoDreamBox($array);
 
         $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$years,'status send'=>$code,'cif'=>$cif));
         return $datas;
@@ -315,7 +315,7 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $this->sendtoDreamBox($array);
+        $code = $this->sendtoDreamBox($array);
 
         $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'lokasi'=>$lokasi,'status send'=>$code,'cif'=>$cif));
         return $datas;
@@ -370,7 +370,7 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $this->sendtoDreamBox($array);
+        $code = $this->sendtoDreamBox($array);
 
         $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'status send'=>$code,'cif'=>$cif));
         return $datas;
@@ -461,11 +461,11 @@ class SimulasiController extends Controller
      
 
         //echo 'cif: '.$cif;      
-        //return $request->getStatusCode(); 
-        echo $request->getStatusCode(); 
-        echo $request->getBody(); 
+        return $request->getStatusCode(); 
+        //echo $request->getStatusCode(); 
+        //echo $request->getBody(); 
 
-        die();
+        //die();
         //echo $response->getStatusCode(); // 200
         //echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
         //echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'

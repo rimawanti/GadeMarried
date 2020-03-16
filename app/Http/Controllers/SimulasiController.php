@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DateTime;
 
 class SimulasiController extends Controller
 {
@@ -67,6 +68,14 @@ class SimulasiController extends Controller
         $array = array();
         $code = 500;
 
+        $future = new DateTime($target);
+        $now = new DateTime(date("Y-m-d"));
+        $jangka_tahun = $future->diff($now);
+        $jangka = $jangka_tahun->y;
+
+        if($jangka==0){
+            $jangka=1;
+        }
 
         $jumlah = $catering + $wo + $dekor + $mua + $pra + $venue + ($souvenir*$undangan) + ($undangan*$undanganavg);
         //echo $jangka;
@@ -81,7 +90,7 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $code=$this->sendtoDreamBox($array);
+        //$code=$this->sendtoDreamBox($array);
 
         //calculate query times
         $time_elapsed_secs = microtime(true) - $start;
@@ -96,7 +105,7 @@ class SimulasiController extends Controller
             $rekom = 0;
         }
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'status send'=>$code,'cif'=>$cif));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'status send'=>$code,'cif'=>$cif,'jangka'=>$jangka,'cat'=>'CA004','target'=>$target,'total_'=>$annual_total,'cicilan_'=>$cicilan));
         return $datas;
     }
     
@@ -200,9 +209,9 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $code = $this->sendtoDreamBox($array);
+        //$code = $this->sendtoDreamBox($array);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$years,'status send'=>$code,'cif'=>$cif));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$years,'status send'=>$code,'cif'=>$cif,'target'=>$target,'total_'=>$ftotal,'cicilan_'=>$cicilan,'cat'=>$array[0]));
         return $datas;
 
         //return redirect()->route('simulasi.nilai',array($cicilan_));
@@ -224,6 +233,15 @@ class SimulasiController extends Controller
         $cif = $request->input('InputCIF');
         $array = array();
         $code = 500;
+
+        $future = new DateTime($target);
+        $now = new DateTime(date("Y-m-d"));
+        $jangka_tahun = $future->diff($now);
+        $jangka = $jangka_tahun->y;
+
+        if($jangka==0){
+            $jangka=1;
+        }
 
         // $this->console_log("dana: ".$dana."proggram: ".$program."vaksin: ".$vaksin."saku: ".$saku."jemaah: ".$jemaah."oleh: ".$oleh."jangka: ".$jangka."gaji: ".$gaji); die();
 
@@ -251,9 +269,9 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $code = $this->sendtoDreamBox($array);
+        //$code = $this->sendtoDreamBox($array);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'success send'=>$code,'target'=>$target,'cif'=>$cif));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'success send'=>$code,'target'=>$target,'cif'=>$cif,'total_'=>$total,'cat'=>$array[0],'cicilan_'=>$cicilan));
 
         return $datas;
 
@@ -283,6 +301,14 @@ class SimulasiController extends Controller
         } else if ($lokasi == 3){
             $tidakpajak = 60000000;
         } 
+        $future = new DateTime($target);
+        $now = new DateTime(date("Y-m-d"));
+        $jangka_tahun = $future->diff($now);
+        $jangka = $jangka_tahun->y;
+
+        if($jangka==0){
+            $jangka=1;
+        }
         
         //$tidakpajak = $this->removeComma($request->input('InputTidakPajak'));
         //$notaris = $this->removeComma($request->input('InputNotaris'));
@@ -315,9 +341,9 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $code = $this->sendtoDreamBox($array);
+        //$code = $this->sendtoDreamBox($array);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'lokasi'=>$lokasi,'status send'=>$code,'cif'=>$cif));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'lokasi'=>$lokasi,'status send'=>$code,'cif'=>$cif,'target'=>$target,'cicilan_'=>$cicilan,'total_'=>$total,'cat'=>$array[0]));
         return $datas;
     }
     public function hitungKendaraan(Request $request){
@@ -336,6 +362,15 @@ class SimulasiController extends Controller
         $cif = $request->input('InputCIF');
         $array = array();
         $code = 500;
+
+        $future = new DateTime($target);
+        $now = new DateTime(date("Y-m-d"));
+        $jangka_tahun = $future->diff($now);
+        $jangka = $jangka_tahun->y;
+
+        if($jangka==0){
+            $jangka=1;
+        }
 
         if($tipe == 0){ //jika motor
             $biaya = ($harga * pow((1+$i),$jangka)) + 500000;
@@ -370,9 +405,9 @@ class SimulasiController extends Controller
         $array[3] = $cif; //cif
         $array[4] = $target; //target
 
-        $code = $this->sendtoDreamBox($array);
+        //$code = $this->sendtoDreamBox($array);
 
-        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'status send'=>$code,'cif'=>$cif));
+        $datas = json_encode(array('cicilan'=>$cicilan_,'total' => $total_,'time'=>$time_elapsed_secs,'rekom'=>$rekom,'years'=>$jangka,'status send'=>$code,'cif'=>$cif,'target'=>$target,'total_'=>$total,'cat'=>$array[0],'cicilan_'=>$cicilan));
         return $datas;
 
     }
@@ -435,12 +470,18 @@ class SimulasiController extends Controller
         echo $js_code;
     }
 
-    function sendtoDreamBox($arr){
-        $cat = $arr[0];
-        $total = $arr[1];
-        $cicilan = $arr[2];
-        $cif = $arr[3];
-        $target = $arr[4];
+    public function sendtoDreamBox(Request $request){
+        // $cat = $arr[0];
+        // $total = $arr[1];
+        // $cicilan = $arr[2];
+        // $cif = $arr[3];
+        // $target = $arr[4];
+
+        $cat = $request->input('cat');
+        $total = $request->input('total');
+        $cicilan = $request->input('cicilan');
+        $cif = $request->input('CIF');
+        $target = $request->input('target');;
 
         $client = new \GuzzleHttp\Client();
         //$response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
@@ -460,11 +501,14 @@ class SimulasiController extends Controller
         $request = $client->post($url, ['body'=>$data]);
      
 
-        //echo 'cif: '.$cif;      
-        return $request->getStatusCode(); 
+        //echo 'cif: '.$cif.'target: '.$target.'total: '.$total.'cat: '.$cat;      
+        //return $request->getStatusCode(); 
         //echo $request->getStatusCode(); 
-        //echo $request->getBody(); 
+        echo $request->getBody(); 
 
+        $datas = json_encode(array('responseCode'=>$request->getStatusCode(),'body'=>$request->getBody()));
+
+        return $datas;
         //die();
         //echo $response->getStatusCode(); // 200
         //echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'

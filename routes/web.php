@@ -92,6 +92,9 @@ Route::post('simulasi/pendidikan/hitung', ['as' => 'sim.edu','uses' => 'Simulasi
 Route::post('simulasi/haji/hitung', ['as' => 'sim.haji','uses' => 'SimulasiController@hitungHaji']);
 Route::post('simulasi/rumah/hitung', ['as' => 'sim.rumah','uses' => 'SimulasiController@hitungRumah']);
 Route::post('simulasi/kendaraan/hitung', ['as' => 'sim.kendaraan','uses' => 'SimulasiController@hitungKendaraan']);
+//SEND TO DREAMBOX API
+Route::post('simulasi/sendToAPI', ['as' => 'sim.sendtoapi','uses' => 'SimulasiController@sendToDreamBox']);
+
 //Route::post('simulasi/hitungPinjaman', 'SimulasiController@hitungPinjaman'); //gak dipake
 
 

@@ -5,7 +5,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <style type="text/css"> 
       #hitungulang, 
-      #rekom {
+      #rekom,
+      #btn-save{
         display: none;
       }
   </style>
@@ -125,7 +126,8 @@
                     width="307" height="240" />  -->         
             </div>
             <div class="d-flex flex-row justify-content-end">
-              <a href="{{url('/simulasi/rumah')}}"><input type="button" value="Hitung Ulang" id="hitungulang" class="btn btn-danger"></a>
+              <input type="button" value="Hitung Ulang" id="hitungulang" class="btn btn-danger" onclick="window.location.reload();">
+              <input type="button" class="btn btn-primary success" value="SIMPAN" id="btn-save">
             </div>
           </div>
         </div>
@@ -161,34 +163,55 @@
                   },
                   success: function(data)
                   {
-                      var data= $.parseJSON(data);
+                      var result = $.parseJSON(data);
 
+                      document.getElementById("btn-save").style.display = "block"; 
                       document.getElementById("hitungulang").style.display = "block"; 
                       document.getElementById("rekom").style.display = "block";
                        $("#btn-todo").attr("disabled", true); 
 
-                      if(data.rekom == 0){
+                      if(result.rekom == 0){
                          $('#rekom').val("Belum direkomendasikan ");
                          $('#rekom').css({'class': 'btn btn-danger btn-block'});
                          $('#ket').text("Pilih jangka waktu yang lebih panjang sesuai penghasilan anda");
                          $('#ket').css({'color': '#e31a0b'});
                       }
-                      if(data.rekom == 1){
+                      if(result.rekom == 1){
                          $('#rekom').val("Direkomendasikan");
                          $('#ket').text("Silahkan daftar produk sekarang!!");
                          $('#ket').css({'color': 'blue'});
                       }
                       $('#nama_pasangan').text("Hasil Simulasi "+ $('#InputName').val());
 
-                      $('#nilai').text("Cicilan per bulan: "+data.cicilan);
+                      $('#nilai').text("Cicilan per bulan: "+result.cicilan);
                       $('#nilai').css({'color':'#e31a0b'});
-                      $('#query_time').text("Calculating tooks "+data.time+" seconds");
-                      $('#total').text("Biaya beli rumah termasuk Biaya Notaris (Cek Sertifikat, Akta Jual Beli, Biaya Balik Nama, BPHTB), NPOPTKP adalah "+data.total+" dalam "+data.years+"tahun");
+                      $('#query_time').text("Calculating tooks "+result.time+" seconds");
+                      $('#total').text("Biaya beli rumah termasuk Biaya Notaris (Cek Sertifikat, Akta Jual Beli, Biaya Balik Nama, BPHTB), NPOPTKP adalah "+result.total+" dalam "+result.years+"tahun");
                       //alert(data.lokasi);
 
-                      var url = document.location.href+"?tab=finished";//+data.cicilan;
-                      // document.location = url;
-                      window.history.replaceState(null, null, url);
+                      //button simpan
+                      $('#btn-save').on("click",function(e) {
+                        e.preventDefault();
+                        //AJAX
+                        $.ajax({
+                          url: '{{url("simulasi/sendToAPI")}}', 
+                          method: 'POST',
+                          data: {
+                            "_token" : CSRF_TOKEN,
+                            "CIF" : result.cif,
+                            "cat" : result.cat,
+                            "target" : result.target,
+                            "cicilan" : result.cicilan_,
+                            "total" : result.total_,
+                          }, 
+                          success: function(result){
+                            var url = document.location.href+"&tab=finished";//+data.cicilan;
+                          // document.location = url;
+                            window.history.replaceState(null, null, url);
+                            alert("Data berhasil disimpan!")
+                          }
+                        }); //AJAX//
+                      }); //BUTTON SIMPAN//
                   },
                   error: function (response) {
                     alert("error! "+response); 

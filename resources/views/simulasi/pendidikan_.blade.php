@@ -147,7 +147,7 @@
                          
                 </div>
                 <div class="d-flex flex-row justify-content-end">
-                    <input type="button" value="Hitung Ulang" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
+                    <input type="button" value="List DreamBox" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
                     <input type="button" class="btn btn-primary success" value="SIMPAN" id="btn-save">
                 </div>
                 </div>
@@ -211,6 +211,7 @@
                       $('#nilai').css({'color':'#e31a0b'});
                       $('#query_time').text("Calculating tooks "+result.time+" seconds");
                       $('#total').text("Biaya pendidikan anak diprediksikan menjadi "+result.total+" dalam "+result.years+"tahun");
+                       window.top.close();
 
                       //button simpan
                       $('#btn-save').on("click",function(e) {
@@ -232,6 +233,7 @@
                           // document.location = url;
                             window.history.replaceState(null, null, url);
                             alert("Data berhasil disimpan!")
+                            //window.close();
                           }
                         }); //AJAX//
                       }); //BUTTON SIMPAN//

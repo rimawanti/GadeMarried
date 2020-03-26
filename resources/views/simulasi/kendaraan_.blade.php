@@ -138,7 +138,7 @@
                          
                 </div>
                 <div class="d-flex flex-row justify-content-end">
-                  <input type="button" value="Hitung Ulang" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
+                  <input type="button" value="List Dreambox" onClick="window.location.reload();" id="hitungulang" class="btn btn-danger">
                   <input type="button" class="btn btn-primary success" value="SIMPAN" id="btn-save">
                 </div>
                 </div>

@@ -149,7 +149,7 @@
 
                         </div>
                         <div class="d-flex flex-row justify-content-end">
-                             <input type="button" value="Hitung Ulang" id="hitungulang" class="btn btn-danger" onclick="window.location.reload();">
+                             <input type="button" value="List DreamBox" id="hitungulang" class="btn btn-danger" onclick="window.location.reload();">
                              <input type="button" class="btn btn-primary success" value="SIMPAN" id="btn-save">
                         </div>
                     </div>
@@ -215,7 +215,6 @@
                       $('#query_time').text("Calculating tooks "+result.time+" seconds");
                       $('#total').text("Biaya haji dan kelengkapannya menjadi "+result.total+" dalam "+result.years+"tahun");
                       
-                      window.open('','_self').close()
 
                       //button simpan
                       $('#btn-save').on("click",function(e) {
